@@ -10,7 +10,7 @@ type Status = { state: "idle" | "sending" | "done" } | { state: "error"; message
 const fieldBase =
   "w-full rounded-md border border-input bg-card px-3.5 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-sec";
 
-function Field({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string; children: ReactNode }) {
+function Field({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string | undefined; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-semibold">
@@ -36,7 +36,7 @@ function Honeypot() {
   );
 }
 
-function Consent({ id, error, children }: { id: string; error?: string; children: ReactNode }) {
+function Consent({ id, error, children }: { id: string; error?: string | undefined; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id} className="flex items-start gap-3 text-sm leading-relaxed">
@@ -79,20 +79,22 @@ function SubmitButton({ sending, children }: { sending: boolean; children: React
   );
 }
 
+type Errs = Partial<Record<"fullName" | "email" | "message" | "consent" | "position" | "cv", string>>;
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const FORMS = ["Form 1", "Form 2", "Form 3", "Form 4", "Form 5", "Form 6"];
 
 export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategory?: EnquiryCategory }) {
   const send = useServerFn(submitEnquiry);
   const [status, setStatus] = useState<Status>({ state: "idle" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Errs>({});
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
     const v = (k: string) => String(fd.get(k) ?? "").trim();
-    const errs: Record<string, string> = {};
+    const errs: Errs = {};
     if (v("fullName").length < 2) errs.fullName = "Please enter your full name";
     if (!EMAIL_RE.test(v("email"))) errs.email = "Please enter a valid email address";
     if (v("message").length < 5) errs.message = "Please add a short message";
@@ -171,7 +173,7 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
 export function NewsletterForm({ compact = false }: { compact?: boolean }) {
   const send = useServerFn(submitNewsletter);
   const [status, setStatus] = useState<Status>({ state: "idle" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Errs>({});
   const idp = compact ? "nl-footer" : "nl-page";
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -179,7 +181,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
     const form = e.currentTarget;
     const fd = new FormData(form);
     const email = String(fd.get("email") ?? "").trim();
-    const errs: Record<string, string> = {};
+    const errs: Errs = {};
     if (!EMAIL_RE.test(email)) errs.email = "Please enter a valid email address";
     if (!fd.get("consent")) errs.consent = "Please confirm consent";
     setErrors(errs);
@@ -237,7 +239,7 @@ function toBase64(file: File) {
 export function CareersForm() {
   const send = useServerFn(submitCareers);
   const [status, setStatus] = useState<Status>({ state: "idle" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Errs>({});
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -245,7 +247,7 @@ export function CareersForm() {
     const fd = new FormData(form);
     const v = (k: string) => String(fd.get(k) ?? "").trim();
     const file = fd.get("cv");
-    const errs: Record<string, string> = {};
+    const errs: Errs = {};
     if (v("fullName").length < 2) errs.fullName = "Please enter your full name";
     if (!EMAIL_RE.test(v("email"))) errs.email = "Please enter a valid email address";
     if (v("position").length < 2) errs.position = "Please tell us the role you are interested in";
