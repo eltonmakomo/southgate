@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import emblem from "@/assets/southgate-emblem.png.asset.json";
-import { images, school, sections } from "@/content/site";
+import { images, newsIntro, school, sections } from "@/content/site";
 import { HeroVideo } from "@/components/site/HeroVideo";
 import { PhotoCard } from "@/components/site/PhotoCard";
-import { AdmissionsCta } from "@/components/site/PageParts";
+import { AdmissionsCta, NewsFeed } from "@/components/site/PageParts";
 import { Star } from "@/components/site/Star";
 
 export const Route = createFileRoute("/")({
@@ -163,6 +163,22 @@ function Home() {
               Our ZCC foundation <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-paper">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <p className="eyebrow mb-3 text-olive">{newsIntro.eyebrow}</p>
+              <h2 className="text-section text-olive">{newsIntro.title}</h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{newsIntro.summary}</p>
+            </div>
+            <Link to="/$section/$page" params={{ section: "news-and-events", page: "latest-news" }} className="inline-flex shrink-0 items-center gap-2 font-semibold text-olive hover:underline">
+              News & Events <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <NewsFeed />
         </div>
       </section>
 

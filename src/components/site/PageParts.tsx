@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronRight, Info } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import type { Block, Section } from "@/content/site";
+import { schoolNews, type Block, type Section } from "@/content/site";
+import { PhotoCard } from "./PhotoCard";
 import { cn } from "@/lib/utils";
 import { CareersForm, EnquiryForm, NewsletterForm } from "./Forms";
 import { Star } from "./Star";
@@ -97,11 +98,23 @@ export function SectionNav({ section, current }: { section: Section; current?: s
   );
 }
 
+export function NewsFeed() {
+  return (
+    <div className="theme-news grid gap-6 sm:grid-cols-2">
+      {schoolNews.map((article) => (
+        <PhotoCard key={article.slug} section="news-and-events" page={article.slug} image={article.image} imageAlt={article.imageAlt} title={article.title} text={article.summary} tone="paper" />
+      ))}
+    </div>
+  );
+}
+
 export function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <div className="flex flex-col gap-6">
       {blocks.map((b, i) => {
         switch (b.type) {
+          case "news":
+            return <NewsFeed key={i} />;
           case "p":
             return (
               <p key={i} className={cn("leading-relaxed text-foreground/85", i === 0 ? "text-xl leading-relaxed text-foreground" : "text-lg")}>
