@@ -11,6 +11,7 @@
 
 ## Project rules
 - Glass utilities use shared blur tokens and only the standard backdrop-filter declaration so production CSS preserves the effect.
+- Header glass sits on a separate background layer, not a dropdown ancestor, so dropdown backdrop blur can sample the page behind it; header and footer use the same complete emblem asset.
 - All school copy lives in `src/content/site.ts`; pages render it through `$section.index.tsx` / `$section.$page.tsx` templates — add content there, not in routes.
 - News articles are defined once as `schoolNews` in the content module and reused by the shared NewsFeed and section page templates so headlines, links and article content stay consistent.
 - Section colours come from `.theme-*` classes in `src/styles.css` (`bg-sec`, `bg-sec-soft`, …) so components stay theme-agnostic.

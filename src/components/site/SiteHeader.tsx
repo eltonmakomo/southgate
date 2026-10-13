@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
-import emblemMark from "@/assets/southgate-mark.png.asset.json";
+import emblem from "@/assets/southgate-emblem.png.asset.json";
 import { sections } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -29,13 +29,10 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
-      <div className="glass mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-3 sm:min-h-24 sm:px-5">
+      <div className="relative isolate mx-auto flex min-h-24 max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-2 sm:min-h-28 sm:px-5">
+        <div className="glass pointer-events-none absolute inset-0 -z-10 rounded-lg" aria-hidden="true" />
         <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Southgate High School home">
-          <img src={emblemMark.url} alt="" width={64} height={40} className="h-14 w-auto shrink-0 object-contain sm:h-16" />
-          <span className="flex flex-col gap-1.5 whitespace-nowrap leading-none">
-            <span className="block font-display text-lg text-olive sm:text-xl">SOUTHGATE</span>
-            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.2em] text-sage sm:text-xs">High School</span>
-          </span>
+          <img src={emblem.url} alt="Southgate High School emblem" width={900} height={543} className="h-20 w-auto shrink-0 object-contain sm:h-24" />
         </Link>
 
         <nav aria-label="Main" className="hidden xl:block">
