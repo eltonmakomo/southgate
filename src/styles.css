@@ -100,7 +100,7 @@
   --sec-soft-foreground: var(--olive-deep);
   --sec-accent: var(--gold);
 
-  --glass-bg: oklch(0.99 0.005 95 / 0.62);
+  --glass-bg: oklch(0.99 0.005 95 / 0.85);
   --glass-bg-dark: oklch(0.2 0.02 125 / 0.42);
   --glass-blur: 36px;
   --glass-blur-dark: 32px;
