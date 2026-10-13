@@ -62,13 +62,17 @@ function Home() {
             </Link>
           </div>
         </div>
-        <span className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] opacity-80 sm:inline-flex">
+        <button
+          type="button"
+          onClick={() => document.getElementById("welcome")?.scrollIntoView({ behavior: "smooth" })}
+          className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 cursor-pointer items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] opacity-80 transition-opacity hover:opacity-100 sm:inline-flex"
+        >
           <ArrowDown className="h-4 w-4" aria-hidden="true" /> Scroll
-        </span>
+        </button>
       </section>
 
       {/* Welcome with emblem */}
-      <section className="relative overflow-hidden bg-paper">
+      <section id="welcome" className="relative overflow-hidden bg-paper">
         <Star className="absolute -left-20 top-16 h-72 w-72 text-olive opacity-[0.07]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[1fr_1.3fr] lg:items-center lg:py-28">
           <div className="flex flex-col items-start gap-6">
