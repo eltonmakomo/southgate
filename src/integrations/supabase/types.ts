@@ -14,7 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      career_applications: {
+        Row: {
+          consent: boolean
+          created_at: string
+          cv_path: string
+          email: string
+          full_name: string
+          id: string
+          message: string | null
+          phone: string | null
+          position: string
+        }
+        Insert: {
+          consent?: boolean
+          created_at?: string
+          cv_path: string
+          email: string
+          full_name: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          position: string
+        }
+        Update: {
+          consent?: boolean
+          created_at?: string
+          cv_path?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          position?: string
+        }
+        Relationships: []
+      }
+      enquiries: {
+        Row: {
+          category: string
+          consent: boolean
+          created_at: string
+          email: string
+          form_level: string | null
+          full_name: string
+          id: string
+          message: string
+          phone: string | null
+          student_name: string | null
+        }
+        Insert: {
+          category: string
+          consent?: boolean
+          created_at?: string
+          email: string
+          form_level?: string | null
+          full_name: string
+          id?: string
+          message: string
+          phone?: string | null
+          student_name?: string | null
+        }
+        Update: {
+          category?: string
+          consent?: boolean
+          created_at?: string
+          email?: string
+          form_level?: string | null
+          full_name?: string
+          id?: string
+          message?: string
+          phone?: string | null
+          student_name?: string | null
+        }
+        Relationships: []
+      }
+      newsletter_signups: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      submission_attempts: {
+        Row: {
+          client_key: string
+          created_at: string
+          id: number
+          kind: string
+        }
+        Insert: {
+          client_key: string
+          created_at?: string
+          id?: number
+          kind: string
+        }
+        Update: {
+          client_key?: string
+          created_at?: string
+          id?: number
+          kind?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
