@@ -23,7 +23,7 @@ export function PageBanner({
   crumbs: { label: string; section?: string }[];
 }) {
   return (
-    <section className="relative isolate flex min-h-[70svh] items-end overflow-hidden bg-ink text-primary-foreground">
+    <section data-banner className="relative isolate flex min-h-[70svh] items-end overflow-hidden bg-ink text-primary-foreground">
       <img src={image} alt={imageAlt} width={1600} height={1008} className="absolute inset-0 -z-10 h-full w-full object-cover" />
       <div className="scrim absolute inset-0 -z-10" />
       <div className="scrim-side absolute inset-0 -z-10" />

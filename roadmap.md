@@ -5,3 +5,5 @@
 - [x] Menus: nav, dropdown and mobile menu labels set in Cinzel
 - [x] Menu bar: glass opacity raised (0.62 → 0.92)
 - [x] Logo: tagline + HIGH SCHOOL line unified to SOUTHGATE dark-olive color; favicon regenerated
+- [x] Header: logo reduced (h-14 / sm:h-16) and bar made slimmer (min-h-20 / sm:min-h-24)
+- [x] Header: collapse to hamburger once scrolled past the banner — verified on homepage, section pages and phone; panel measured effectively opaque over text-heavy areas

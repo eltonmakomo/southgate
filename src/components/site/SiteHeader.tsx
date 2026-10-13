@@ -10,6 +10,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
+  const [past, setPast] = useState(false);
 
   useEffect(() => {
     setOpen(null);
@@ -27,6 +28,34 @@ export function SiteHeader() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Once the opening banner has scrolled away, the menu collapses to a hamburger.
+  useEffect(() => {
+    let raf = 0;
+    const measure = () => {
+      raf = 0;
+      const banner = document.querySelector<HTMLElement>("[data-banner]");
+      const bottom = banner ? banner.getBoundingClientRect().bottom : window.innerHeight * 0.85;
+      setPast(bottom <= 116);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(measure);
+    };
+    measure();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("pageshow", measure);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("pageshow", measure);
+    };
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!past && window.matchMedia("(min-width: 1280px)").matches) setMobile(false);
+  }, [past]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div className="relative mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-1.5 sm:min-h-24 sm:px-5">
@@ -35,7 +64,7 @@ export function SiteHeader() {
           <img src={emblem} alt="Southgate High School emblem" width={900} height={543} className="h-14 w-auto shrink-0 object-contain sm:h-16" />
         </Link>
 
-        <nav aria-label="Main" className="hidden xl:block">
+        <nav aria-label="Main" className={cn("hidden", !past && "xl:block")}>
           <ul className="flex items-center gap-1">
             {sections.map((s) => {
               const active = pathname.startsWith(`/${s.slug}`);
@@ -99,7 +128,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-mint xl:hidden"
+            className={cn("inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-mint", !past && "xl:hidden")}
             aria-label={mobile ? "Close menu" : "Open menu"}
             aria-expanded={mobile}
             aria-controls="mobile-menu"
@@ -111,7 +140,7 @@ export function SiteHeader() {
       </div>
 
       {mobile && (
-        <nav id="mobile-menu" aria-label="Mobile" className="glass mx-auto mt-2 max-h-[calc(100dvh-8rem)] max-w-7xl overflow-y-auto rounded-lg p-3 xl:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className={cn("glass mx-auto mt-2 max-h-[calc(100dvh-8rem)] max-w-7xl overflow-y-auto rounded-lg p-3", !past && "xl:hidden")}>
           <ul className="flex flex-col">
             {sections.map((s) => {
               const expanded = mobileSection === s.slug;
