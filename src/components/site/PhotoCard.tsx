@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import { IllustrativeLabel, Star } from "./Star";
 
 type Props = {
-  to: string;
+  section: string;
+  page: string;
   image: string;
   imageAlt: string;
   eyebrow?: string;
@@ -14,7 +15,7 @@ type Props = {
   className?: string;
 };
 
-export function PhotoCard({ to, image, imageAlt, eyebrow, title, text, tone = "paper", className }: Props) {
+export function PhotoCard({ section, page, image, imageAlt, eyebrow, title, text, tone = "paper", className }: Props) {
   const panel =
     tone === "sec"
       ? "bg-sec text-sec-foreground"
@@ -23,7 +24,8 @@ export function PhotoCard({ to, image, imageAlt, eyebrow, title, text, tone = "p
         : "bg-card text-card-foreground";
   return (
     <Link
-      to={to}
+      to="/$section/$page"
+      params={{ section, page }}
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-lg shadow-card transition-transform duration-300 hover:-translate-y-1",
         className,

@@ -19,7 +19,7 @@ export function PageBanner({
   eyebrow: string;
   title: string;
   lead?: string;
-  crumbs: { label: string; to?: string; params?: Record<string, string> }[];
+  crumbs: { label: string; section?: string }[];
 }) {
   return (
     <section className="relative isolate flex min-h-[70svh] items-end overflow-hidden bg-ink text-primary-foreground">
@@ -34,8 +34,8 @@ export function PageBanner({
           {crumbs.map((c, i) => (
             <span key={i} className="inline-flex items-center gap-1">
               <ChevronRight className="h-3.5 w-3.5 opacity-70" aria-hidden="true" />
-              {c.to ? (
-                <Link to={c.to} params={c.params} className="hover:underline">{c.label}</Link>
+              {c.section ? (
+                <Link to="/$section" params={{ section: c.section }} className="hover:underline">{c.label}</Link>
               ) : (
                 <span aria-current="page" className="font-semibold">{c.label}</span>
               )}

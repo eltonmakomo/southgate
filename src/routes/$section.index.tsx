@@ -51,7 +51,8 @@ function SectionOverview() {
               {section.pages.map((pg, i) => (
                 <PhotoCard
                   key={pg.slug}
-                  to={`/${section.slug}/${pg.slug}`}
+                  section={section.slug}
+                  page={pg.slug}
                   image={pg.image}
                   imageAlt={pg.imageAlt}
                   eyebrow={String(i + 1).padStart(2, "0")}

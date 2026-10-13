@@ -41,7 +41,7 @@ function InnerPage() {
         eyebrow={section.title}
         title={page.title}
         lead={page.summary}
-        crumbs={[{ label: section.title, to: "/$section", params: { section: section.slug } }, { label: page.title }]}
+        crumbs={[{ label: section.title, section: section.slug }, { label: page.title }]}
       />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[18rem_1fr] lg:gap-16">
         <aside className="lg:-mt-32">
@@ -60,7 +60,8 @@ function InnerPage() {
               {related.map((pg, i) => (
                 <PhotoCard
                   key={pg.slug}
-                  to={`/${section.slug}/${pg.slug}`}
+                  section={section.slug}
+                  page={pg.slug}
                   image={pg.image}
                   imageAlt={pg.imageAlt}
                   eyebrow={section.navTitle}

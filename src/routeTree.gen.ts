@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SectionIndexRouteImport } from './routes/$section.index'
+import { Route as SectionPageRouteImport } from './routes/$section.$page'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SectionIndexRoute = SectionIndexRouteImport.update({
+  id: '/$section/',
+  path: '/$section/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectionPageRoute = SectionPageRouteImport.update({
+  id: '/$section/$page',
+  path: '/$section/$page',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$section/$page': typeof SectionPageRoute
+  '/$section/': typeof SectionIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$section/$page': typeof SectionPageRoute
+  '/$section': typeof SectionIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$section/$page': typeof SectionPageRoute
+  '/$section/': typeof SectionIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/$section/$page' | '/$section/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/$section/$page' | '/$section'
+  id: '__root__' | '/' | '/$section/$page' | '/$section/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SectionPageRoute: typeof SectionPageRoute
+  SectionIndexRoute: typeof SectionIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$section/': {
+      id: '/$section/'
+      path: '/$section'
+      fullPath: '/$section/'
+      preLoaderRoute: typeof SectionIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$section/$page': {
+      id: '/$section/$page'
+      path: '/$section/$page'
+      fullPath: '/$section/$page'
+      preLoaderRoute: typeof SectionPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SectionPageRoute: SectionPageRoute,
+  SectionIndexRoute: SectionIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
