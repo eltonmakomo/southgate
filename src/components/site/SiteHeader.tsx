@@ -43,10 +43,12 @@ export function SiteHeader() {
     measure();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    window.addEventListener("pageshow", measure);
     return () => {
       if (raf) cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("pageshow", measure);
     };
   }, [pathname]);
 
