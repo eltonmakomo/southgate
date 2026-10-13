@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import emblem from "@/assets/southgate-emblem.png.asset.json";
+import emblem from "@/assets/southgate-logo-clean.png";
 import { images, newsIntro, school, sections } from "@/content/site";
 import { HeroVideo } from "@/components/site/HeroVideo";
 import { PhotoCard } from "@/components/site/PhotoCard";
@@ -72,7 +72,7 @@ function Home() {
         <Star className="absolute -left-20 top-16 h-72 w-72 text-olive opacity-[0.07]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[1fr_1.3fr] lg:items-center lg:py-28">
           <div className="flex flex-col items-start gap-6">
-            <img src={emblem.url} alt="Southgate High School emblem: open gates, a star and an open book" width={900} height={543} loading="lazy" className="w-full max-w-md" />
+            <img src={emblem} alt="Southgate High School emblem: open gates, a star and an open book" width={900} height={543} loading="lazy" className="w-full max-w-md" />
           </div>
           <div>
             <p className="eyebrow mb-4 text-rose">Welcome to Southgate</p>

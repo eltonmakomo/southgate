@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import emblem from "@/assets/southgate-emblem.png.asset.json";
+import emblem from "@/assets/southgate-logo-clean.png";
 import { school, sections } from "@/content/site";
 import { NewsletterForm } from "./Forms";
 import { Star } from "./Star";
@@ -11,7 +11,7 @@ export function SiteFooter() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.1fr_2fr]">
         <div className="flex flex-col gap-6">
           <div className="w-fit rounded-lg bg-paper p-4">
-            <img src={emblem.url} alt="Southgate High School emblem" width={900} height={543} loading="lazy" className="h-24 w-auto" />
+            <img src={emblem} alt="Southgate High School emblem" width={900} height={543} loading="lazy" className="h-24 w-auto" />
           </div>
           <p className="max-w-sm text-sm leading-relaxed opacity-85">
             A private high school in Zimbabwe, proudly affiliated with the Zion Christian Church. Forms 1 to 6 — opening January 2027.
