@@ -2,11 +2,11 @@ import { createServerFn } from "@tanstack/react-start";
 import { getRequestHeader } from "@tanstack/react-start/server";
 import { z } from "zod";
 
-const LIMITS: Record<string, { max: number; windowMinutes: number }> = {
+const LIMITS = {
   enquiry: { max: 5, windowMinutes: 60 },
   careers: { max: 3, windowMinutes: 60 },
   newsletter: { max: 5, windowMinutes: 60 },
-};
+} satisfies Record<string, { max: number; windowMinutes: number }>;
 
 type Result = { ok: true } | { ok: false; error: string };
 

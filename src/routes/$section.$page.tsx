@@ -31,7 +31,7 @@ function InnerPage() {
   const data = Route.useLoaderData();
   const { section, page } = findPage(data.section, data.page)!;
   const idx = section.pages.findIndex((p) => p.slug === page.slug);
-  const related = [1, 2, 3].map((n) => section.pages[(idx + n) % section.pages.length]).filter((p) => p.slug !== page.slug);
+  const related = [1, 2, 3].map((n) => section.pages[(idx + n) % section.pages.length]).filter((p): p is NonNullable<typeof p> => !!p && p.slug !== page.slug);
 
   return (
     <div className={`theme-${section.theme}`}>

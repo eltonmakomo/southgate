@@ -84,7 +84,7 @@ type Errs = Partial<Record<"fullName" | "email" | "message" | "consent" | "posit
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const FORMS = ["Form 1", "Form 2", "Form 3", "Form 4", "Form 5", "Form 6"];
 
-export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategory?: EnquiryCategory }) {
+export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategory?: EnquiryCategory | undefined }) {
   const send = useServerFn(submitEnquiry);
   const [status, setStatus] = useState<Status>({ state: "idle" });
   const [errors, setErrors] = useState<Errs>({});
