@@ -57,10 +57,18 @@ export function SiteHeader() {
   }, [past]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+    <header className={cn("fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5", past && "pointer-events-none")}>
       <div className="relative mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-1.5 sm:min-h-24 sm:px-5">
-        <div className="glass pointer-events-none absolute inset-0 rounded-lg" aria-hidden="true" />
-        <Link to="/" className="relative flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Southgate High School home">
+        <div
+          className={cn("glass pointer-events-none absolute inset-0 rounded-lg transition-opacity duration-300", past && "opacity-0")}
+          aria-hidden="true"
+        />
+        <Link
+          to="/"
+          className={cn("relative flex shrink-0 items-center gap-2 transition-opacity duration-300 sm:gap-3", past && "invisible opacity-0")}
+          aria-label="Southgate High School home"
+          tabIndex={past ? -1 : undefined}
+        >
           <img src={emblem} alt="Southgate High School emblem" width={900} height={543} className="h-14 w-auto shrink-0 object-contain sm:h-16" />
         </Link>
 
@@ -119,16 +127,21 @@ export function SiteHeader() {
         </nav>
 
         <div className="relative flex shrink-0 items-center gap-2">
-          <Link
-            to="/$section/$page"
-            params={{ section: "admissions", page: "how-to-apply" }}
-            className="hidden rounded-md bg-olive px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-olive-deep sm:inline-flex"
-          >
-            Apply for 2027
-          </Link>
+          {!past && (
+            <Link
+              to="/$section/$page"
+              params={{ section: "admissions", page: "how-to-apply" }}
+              className="hidden rounded-md bg-olive px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-olive-deep sm:inline-flex"
+            >
+              Apply for 2027
+            </Link>
+          )}
           <button
             type="button"
-            className={cn("inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-mint", !past && "xl:hidden")}
+            className={cn(
+              "pointer-events-auto inline-flex items-center justify-center transition-colors hover:bg-mint",
+              past ? "glass h-12 w-12 rounded-full" : "h-11 w-11 rounded-md xl:hidden",
+            )}
             aria-label={mobile ? "Close menu" : "Open menu"}
             aria-expanded={mobile}
             aria-controls="mobile-menu"
@@ -140,7 +153,7 @@ export function SiteHeader() {
       </div>
 
       {mobile && (
-        <nav id="mobile-menu" aria-label="Mobile" className={cn("glass mx-auto mt-2 max-h-[calc(100dvh-8rem)] max-w-7xl overflow-y-auto rounded-lg p-3", !past && "xl:hidden")}>
+        <nav id="mobile-menu" aria-label="Mobile" className={cn("glass pointer-events-auto mx-auto mt-2 max-h-[calc(100dvh-8rem)] max-w-7xl overflow-y-auto rounded-lg p-3", !past && "xl:hidden")}>
           <ul className="flex flex-col">
             {sections.map((s) => {
               const expanded = mobileSection === s.slug;
