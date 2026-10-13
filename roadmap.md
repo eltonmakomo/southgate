@@ -1,3 +1,4 @@
-- [x] Remove illustrative-image overlay tags throughout the site.
-- [x] Review linked Southgate source content and adapt suitable news and school information to the high-school profile.
-- [x] Verify updated pages and image presentation.
+# Roadmap
+
+- [x] Five-pointed stars: rounded outer points and inner notches (Star.tsx path)
+- [ ] Logo: replace purple/rose areas with the lighter sage green from the palette
