@@ -41,7 +41,7 @@ function Home() {
   return (
     <>
       {/* Opening */}
-      <section className="relative isolate flex min-h-[88svh] items-end overflow-hidden bg-ink text-primary-foreground">
+      <section className="relative isolate flex min-h-svh items-end overflow-hidden bg-ink text-primary-foreground">
         <HeroVideo src={heroVideo.url} poster={images.heroGates} label="Illustrative video of students walking through open school gates" />
         <div className="scrim pointer-events-none absolute inset-0" />
         <div className="scrim-side pointer-events-none absolute inset-0" />
