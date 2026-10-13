@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
-import emblem from "@/assets/southgate-logo-transparent-gates.png";
+import emblem from "@/assets/southgate-logo-sage.png";
 import { sections } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +48,7 @@ export function SiteHeader() {
                     aria-controls={`menu-${s.slug}`}
                     onClick={() => setOpen(isOpen ? null : s.slug)}
                     className={cn(
-                      "inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:bg-mint",
+                      "font-display inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold tracking-wide transition-colors hover:bg-mint",
                       active && "bg-mint text-olive-deep",
                     )}
                   >
@@ -64,7 +64,7 @@ export function SiteHeader() {
                     )}
                   >
                     <div className="glass rounded-lg p-2">
-                      <Link to="/$section" params={{ section: s.slug }} className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-bold hover:bg-mint">
+                      <Link to="/$section" params={{ section: s.slug }} className="font-display flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-bold tracking-wide hover:bg-mint">
                         {s.title} overview <ArrowRight className="h-4 w-4" aria-hidden="true" />
                       </Link>
                       <ul className="mt-1 border-t border-border pt-1">
@@ -73,7 +73,7 @@ export function SiteHeader() {
                             <Link
                               to="/$section/$page"
                               params={{ section: s.slug, page: pg.slug }}
-                              className="block rounded-md px-3 py-2 text-sm hover:bg-mint"
+                              className="font-display block rounded-md px-3 py-2 text-sm tracking-wide hover:bg-mint"
                               activeProps={{ className: "bg-mint font-semibold" }}
                             >
                               {pg.title}
@@ -135,7 +135,7 @@ export function SiteHeader() {
                     <ul className="pb-3 pl-2">
                       {s.pages.map((pg) => (
                         <li key={pg.slug}>
-                          <Link to="/$section/$page" params={{ section: s.slug, page: pg.slug }} className="block rounded-md px-2 py-2 text-sm hover:bg-mint" activeProps={{ className: "bg-mint font-semibold" }}>
+                          <Link to="/$section/$page" params={{ section: s.slug, page: pg.slug }} className="font-display block rounded-md px-2 py-2 text-sm tracking-wide hover:bg-mint" activeProps={{ className: "bg-mint font-semibold" }}>
                             {pg.title}
                           </Link>
                         </li>
