@@ -32,7 +32,7 @@ export function SiteHeader() {
       <div className="relative mx-auto flex min-h-24 max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-2 sm:min-h-28 sm:px-5">
         <div className="glass pointer-events-none absolute inset-0 -z-10 rounded-lg" aria-hidden="true" />
         <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Southgate High School home">
-          <img src={emblem} alt="Southgate High School emblem" width={900} height={543} className="h-20 w-auto shrink-0 object-contain sm:h-24" />
+          <img src={emblem} alt="Southgate High School emblem" width={900} height={543} className="h-16 w-auto shrink-0 object-contain sm:h-20" />
         </Link>
 
         <nav aria-label="Main" className="hidden xl:block">
