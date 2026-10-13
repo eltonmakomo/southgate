@@ -42,7 +42,7 @@ function SectionOverview() {
       />
       <div className="bg-sec-soft">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[18rem_1fr]">
-          <aside className="lg:-mt-32 lg:pt-0">
+          <aside className="min-w-0 lg:-mt-32">
             <SectionNav section={section} />
           </aside>
           <div>

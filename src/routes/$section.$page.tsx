@@ -44,7 +44,7 @@ function InnerPage() {
         crumbs={[{ label: section.title, section: section.slug }, { label: page.title }]}
       />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[18rem_1fr] lg:gap-16">
-        <aside className="lg:-mt-32">
+        <aside className="min-w-0 lg:-mt-32">
           <SectionNav section={section} current={page.slug} />
         </aside>
         <article className="min-w-0 max-w-3xl">
