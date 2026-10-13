@@ -137,21 +137,19 @@
 }
 
 @utility glass {
-  background: var(--paper);
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
   }
 }
 
 @utility glass-dark {
-  background: var(--ink);
+  background: var(--glass-bg-dark);
   border: 1px solid oklch(1 0 0 / 0.22);
   color: var(--paper);
   @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    background: var(--glass-bg-dark);
     backdrop-filter: blur(var(--glass-blur-dark)) saturate(1.3);
   }
 }
