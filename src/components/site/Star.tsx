@@ -33,16 +33,3 @@ export function StarField({ className }: { className?: string }) {
   );
 }
 
-export function IllustrativeLabel({ className }: { className?: string }) {
-  return (
-    <span
-      className={cn(
-        "glass-dark inline-flex items-center gap-1.5 rounded px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em]",
-        className,
-      )}
-    >
-      <Star className="h-3 w-3" strokeWidth={1.5} />
-      Illustrative image
-    </span>
-  );
-}

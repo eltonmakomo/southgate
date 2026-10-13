@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { IllustrativeLabel, Star } from "./Star";
+import { Star } from "./Star";
 
 type Props = {
   section: string;
@@ -40,7 +40,6 @@ export function PhotoCard({ section, page, image, imageAlt, eyebrow, title, text
           height={1008}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <IllustrativeLabel className="absolute left-3 top-3" />
       </div>
       <div className={cn("relative flex flex-1 flex-col gap-3 p-6", panel)}>
         <Star className="absolute right-5 top-5 h-5 w-5 opacity-50" />

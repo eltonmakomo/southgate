@@ -1,3 +1,3 @@
-- [ ] Remove illustrative-image overlay tags throughout the site.
+- [x] Remove illustrative-image overlay tags throughout the site.
 - [ ] Review linked Southgate source content and adapt suitable news and school information to the high-school profile.
 - [ ] Verify updated pages and image presentation.

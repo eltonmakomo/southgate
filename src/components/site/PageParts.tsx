@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Block, Section } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { CareersForm, EnquiryForm, NewsletterForm } from "./Forms";
-import { IllustrativeLabel, Star } from "./Star";
+import { Star } from "./Star";
 
 export function PageBanner({
   image,
@@ -27,7 +27,6 @@ export function PageBanner({
       <div className="scrim absolute inset-0 -z-10" />
       <div className="scrim-side absolute inset-0 -z-10" />
       <Star className="absolute right-[6%] top-28 h-40 w-40 text-sec-accent opacity-60 drift sm:h-64 sm:w-64" />
-      <IllustrativeLabel className="absolute bottom-5 right-5" />
       <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36">
         <nav aria-label="Breadcrumb" className="glass-dark mb-6 inline-flex max-w-full flex-wrap items-center gap-1 rounded-md px-3 py-1.5 text-sm">
           <Link to="/" className="hover:underline">Home</Link>

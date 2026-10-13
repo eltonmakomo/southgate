@@ -6,7 +6,7 @@ import { images, school, sections } from "@/content/site";
 import { HeroVideo } from "@/components/site/HeroVideo";
 import { PhotoCard } from "@/components/site/PhotoCard";
 import { AdmissionsCta } from "@/components/site/PageParts";
-import { IllustrativeLabel, Star } from "@/components/site/Star";
+import { Star } from "@/components/site/Star";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,7 +65,6 @@ function Home() {
         <span className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] opacity-80 sm:inline-flex">
           <ArrowDown className="h-4 w-4" aria-hidden="true" /> Scroll
         </span>
-        <IllustrativeLabel className="absolute left-5 top-24 z-10 sm:left-auto sm:right-24 sm:top-auto sm:bottom-8" />
       </section>
 
       {/* Welcome with emblem */}
@@ -99,7 +98,6 @@ function Home() {
               <div className={i % 2 ? "md:order-2" : ""}>
                 <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
                   <img src={pl.image} alt={`Illustrative image: ${pl.title}`} loading="lazy" width={1600} height={1008} className="h-full w-full object-cover" />
-                  <IllustrativeLabel className="absolute left-3 top-3" />
                 </div>
               </div>
               <div>
@@ -166,7 +164,6 @@ function Home() {
             </Link>
           </div>
         </div>
-        <IllustrativeLabel className="absolute bottom-4 right-4 hidden md:inline-flex" />
       </section>
 
       <AdmissionsCta />
