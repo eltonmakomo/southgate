@@ -34,6 +34,7 @@ export type Block =
   | { type: "faq"; items: { q: string; a: string }[] }
   | { type: "quote"; text: string[]; cite: string }
   | { type: "pending"; text: string }
+  | { type: "news" }
   | { type: "form"; form: FormKind; category?: EnquiryCategory };
 
 export type Page = {
@@ -113,6 +114,81 @@ export const school = {
 
 const p = (text: string): Block => ({ type: "p", text });
 const list = (items: string[]): Block => ({ type: "list", items });
+
+export const newsIntro = {
+  eyebrow: "News & Updates",
+  title: "The Southgate founding story",
+  summary: "Admissions, our founding community and the vision for a new high school opening in January 2027.",
+};
+
+// Adapted from the preparatory site's opening, founding-cohort, vision,
+// leadership and campus stories. Its dates, placeholder quotations and
+// unverified construction or enrolment claims do not apply to the high school.
+export const schoolNews: Page[] = [
+  {
+    slug: "opening-january-2027",
+    title: "Southgate High School Opens in January 2027",
+    summary: "Admissions are open for our first intake, from Form 1 through to Form 6.",
+    image: admissionsImg,
+    imageAlt: "Illustrative family discussing secondary-school admissions",
+    blocks: [
+      p("Southgate High School is welcoming enquiries and applications ahead of its January 2027 opening. Our first intake marks the beginning of a new secondary-school community rooted in the values of the Zion Christian Church."),
+      p("From Form 1 to Form 6, our programme brings together ZIMSEC and Cambridge pathways, close academic attention and opportunities to grow through sport, the arts, agriculture and student leadership. Families can enquire about day-school and premium weekly boarding arrangements."),
+      p("Our main entry points are Form 1 and Form 5, with applications for other forms considered subject to availability. An academic assessment, family interview and review of previous school reports help us understand each applicant’s strengths and readiness."),
+      { type: "form", form: "enquiry", category: "admissions" },
+    ],
+  },
+  {
+    slug: "our-founding-cohort",
+    title: "Be Part of Southgate’s Founding Cohort",
+    summary: "Our first students and their families will help shape the traditions of a new school.",
+    image: heroGates,
+    imageAlt: "Illustrative high-school students arriving through school gates",
+    blocks: [
+      p("Being part of a founding cohort means more than joining a school. Southgate’s first students will help shape its community, from the first assembly and sporting fixture to the friendships and traditions that future generations will inherit."),
+      p("For students beginning Form 1, this is the start of a journey towards confidence, independence and a strong secondary education. For students entering Sixth Form, it is an opportunity to contribute as senior role models while preparing for A-Level examinations and life beyond school."),
+      p("We welcome local, regional and international families who share our commitment to academic excellence, faith and character. Families interested in our January 2027 intake can begin with an enquiry and discuss the appropriate form, curriculum pathway and boarding arrangements with our admissions team."),
+      { type: "form", form: "enquiry", category: "admissions" },
+    ],
+  },
+  {
+    slug: "a-vision-for-southgate",
+    title: "A Vision for Southgate: Character Matters",
+    summary: "Preparing young people for university and adult life without losing sight of who they are.",
+    image: choirImg,
+    imageAlt: "Illustrative school choir gathered in a bright hall",
+    blocks: [
+      p("The vision behind Southgate is simple: a young person’s character matters as much as their results. Our high school is being built to prepare students academically, spiritually and personally for Zimbabwe, the wider region and the world."),
+      p("Rooted in the Zion Christian Church, our ethos centres on discipline, humility, integrity and service. Daily devotions, chapel services and pastoral support connect these values to the everyday choices students make."),
+      p("Academic ambition and care belong together. Small teaching groups, close guidance and a broad co-curricular programme are intended to help students leave Southgate not only with qualifications, but with resilience, compassion and the confidence to contribute to their communities."),
+    ],
+  },
+  {
+    slug: "leadership-for-our-founding-year",
+    title: "Leadership for Our Founding Year",
+    summary: "Academic expertise, pastoral care and faith guide the school’s founding approach.",
+    image: leadershipImg,
+    imageAlt: "Illustrative students taking part in a library discussion",
+    blocks: [
+      p("A strong school needs leadership that brings academic ambition and pastoral responsibility together. Southgate High School’s governance combines Zion Christian Church leadership, experienced educators and community representatives."),
+      p("Our teaching approach is designed around the demands of secondary education: a confident transition into Form 1, careful preparation for O-Level and IGCSE, and specialist mentoring through Sixth Form. Teachers, tutors and house parents work together to support both learning and wellbeing."),
+      { type: "pending", text: "Named leadership profiles and the Head’s biography will be published once confirmed for Southgate High School." },
+    ],
+  },
+  {
+    slug: "campus-designed-for-secondary-learning",
+    title: "A Campus Designed for Secondary Learning",
+    summary: "Classrooms, practical learning and spaces for study, faith and a full school life.",
+    image: campusImg,
+    imageAlt: "Illustrative school campus with classrooms and landscaped grounds",
+    blocks: [
+      p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our high-school students, that means spaces suited to the changing needs of young people from Form 1 through to Form 6."),
+      list(["Well-resourced classrooms, science laboratories and ICT facilities", "Library and supervised study spaces for independent learning", "Boarding houses, dining facilities and spaces to relax", "Sports fields and courts, alongside arts and music spaces", "Working agricultural land for hands-on learning and stewardship"]),
+      p("Sustainability is part of the school’s values rather than a separate activity. Our agricultural programme connects classroom learning with responsibility for land, resources and the wider community."),
+      { type: "pending", text: "Verified construction milestones, campus photographs and visit arrangements will be shared when confirmed for the high school." },
+    ],
+  },
+];
 
 export const sections: Section[] = [
   {
@@ -597,22 +673,22 @@ export const sections: Section[] = [
     title: "News & Events",
     navTitle: "News & Events",
     theme: "news",
-    intro: "School news, calendar, gallery, newsletters and — in time — our alumni community.",
+    intro: "Follow our founding story, admissions updates and vision for Southgate High School, alongside the calendar, gallery and newsletters.",
     image: choirImg,
     imageAlt: "Illustrative students singing together",
     pages: [
       {
         slug: "latest-news",
         title: "Latest News",
-        summary: "Announcements and milestones as we prepare to open.",
+        summary: newsIntro.summary,
         image: campusImg,
         imageAlt: "Illustrative school campus",
         blocks: [
-          p("As we prepare for our January 2027 opening, this space will be regularly updated with school news, announcements and milestones. Check back soon."),
-          p("From admissions milestones and campus progress updates to staff announcements and community initiatives, this page will become the go to source for everything happening at Southgate."),
-          { type: "pending", text: "No news items have been published yet." },
+          p("Follow the founding story of Southgate High School as we prepare to welcome students in January 2027. Explore our admissions announcement, meet the vision behind the school and discover how our founding community will take shape."),
+          { type: "news" },
         ],
       },
+      ...schoolNews,
       {
         slug: "school-calendar",
         title: "School Calendar",

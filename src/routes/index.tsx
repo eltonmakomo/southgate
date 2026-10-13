@@ -2,11 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import emblem from "@/assets/southgate-emblem.png.asset.json";
-import { images, school, sections } from "@/content/site";
+import { images, newsIntro, school, sections } from "@/content/site";
 import { HeroVideo } from "@/components/site/HeroVideo";
 import { PhotoCard } from "@/components/site/PhotoCard";
-import { AdmissionsCta } from "@/components/site/PageParts";
-import { IllustrativeLabel, Star } from "@/components/site/Star";
+import { AdmissionsCta, NewsFeed } from "@/components/site/PageParts";
+import { Star } from "@/components/site/Star";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,7 +65,6 @@ function Home() {
         <span className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] opacity-80 sm:inline-flex">
           <ArrowDown className="h-4 w-4" aria-hidden="true" /> Scroll
         </span>
-        <IllustrativeLabel className="absolute left-5 top-24 z-10 sm:left-auto sm:right-24 sm:top-auto sm:bottom-8" />
       </section>
 
       {/* Welcome with emblem */}
@@ -99,7 +98,6 @@ function Home() {
               <div className={i % 2 ? "md:order-2" : ""}>
                 <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
                   <img src={pl.image} alt={`Illustrative image: ${pl.title}`} loading="lazy" width={1600} height={1008} className="h-full w-full object-cover" />
-                  <IllustrativeLabel className="absolute left-3 top-3" />
                 </div>
               </div>
               <div>
@@ -166,7 +164,22 @@ function Home() {
             </Link>
           </div>
         </div>
-        <IllustrativeLabel className="absolute bottom-4 right-4 hidden md:inline-flex" />
+      </section>
+
+      <section className="bg-paper">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <p className="eyebrow mb-3 text-olive">{newsIntro.eyebrow}</p>
+              <h2 className="text-section text-olive">{newsIntro.title}</h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{newsIntro.summary}</p>
+            </div>
+            <Link to="/$section/$page" params={{ section: "news-and-events", page: "latest-news" }} className="inline-flex shrink-0 items-center gap-2 font-semibold text-olive hover:underline">
+              News & Events <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <NewsFeed />
+        </div>
       </section>
 
       <AdmissionsCta />
