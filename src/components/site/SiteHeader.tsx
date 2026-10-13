@@ -29,16 +29,16 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
-      <div className="glass mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-2 sm:px-5">
-        <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Southgate High School home">
-          <img src={emblemMark.url} alt="" width={64} height={40} className="h-10 w-auto" />
-          <span className="min-w-0 leading-none">
-            <span className="block font-display text-base text-olive sm:text-lg">SOUTHGATE</span>
-            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.28em] text-sage">High School</span>
+      <div className="glass mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 rounded-lg px-3 py-3 sm:min-h-24 sm:px-5">
+        <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Southgate High School home">
+          <img src={emblemMark.url} alt="" width={64} height={40} className="h-14 w-auto shrink-0 object-contain sm:h-16" />
+          <span className="flex flex-col gap-1.5 whitespace-nowrap leading-none">
+            <span className="block font-display text-lg text-olive sm:text-xl">SOUTHGATE</span>
+            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.2em] text-sage sm:text-xs">High School</span>
           </span>
         </Link>
 
-        <nav aria-label="Main" className="hidden lg:block">
+        <nav aria-label="Main" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {sections.map((s) => {
               const active = pathname.startsWith(`/${s.slug}`);
@@ -92,7 +92,7 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <Link
             to="/$section/$page"
             params={{ section: "admissions", page: "how-to-apply" }}
@@ -102,7 +102,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-mint lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-mint xl:hidden"
             aria-label={mobile ? "Close menu" : "Open menu"}
             aria-expanded={mobile}
             aria-controls="mobile-menu"
@@ -114,7 +114,7 @@ export function SiteHeader() {
       </div>
 
       {mobile && (
-        <nav id="mobile-menu" aria-label="Mobile" className="glass mx-auto mt-2 max-h-[calc(100dvh-6rem)] max-w-7xl overflow-y-auto rounded-lg p-3 lg:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="glass mx-auto mt-2 max-h-[calc(100dvh-8rem)] max-w-7xl overflow-y-auto rounded-lg p-3 xl:hidden">
           <ul className="flex flex-col">
             {sections.map((s) => {
               const expanded = mobileSection === s.slug;
