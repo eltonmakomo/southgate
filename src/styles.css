@@ -111,7 +111,7 @@
   --scrim-side: linear-gradient(90deg, oklch(0.14 0.02 125 / 0.7) 0%, oklch(0.14 0.02 125 / 0.2) 60%, transparent 100%);
 }
 
-.theme-about { --sec: var(--olive); --sec-foreground: var(--paper); --sec-soft: var(--mint); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--gold); }
+.theme-about { --sec: var(--olive-deep); --sec-foreground: var(--paper); --sec-soft: var(--mint); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--gold); }
 .theme-academics { --sec: var(--teal); --sec-foreground: var(--paper); --sec-soft: var(--sky); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--sun); }
 .theme-admissions { --sec: var(--red); --sec-foreground: var(--paper); --sec-soft: var(--blush); --sec-soft-foreground: var(--ink); --sec-accent: var(--sun); }
 .theme-life { --sec: var(--olive-deep); --sec-foreground: var(--paper); --sec-soft: var(--sun); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--mint); }
