@@ -59,7 +59,7 @@
 :root {
   --radius: 0.5rem;
 
-  --olive: oklch(0.44568753 0.05322206 128.78250668);
+  --olive: oklch(0.5839 0.0252 110); /* primary green — sampled from the client's reference photo (sage pouch) */
   --olive-deep: color-mix(in oklab, var(--olive) 72%, var(--ink));
   --sage: oklch(0.59595045 0.04954172 121.60101663);
   --gold: oklch(0.73192297 0.11477099 86.37226526);
@@ -80,7 +80,7 @@
   --card-foreground: var(--ink);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--ink);
-  --primary: var(--olive);
+  --primary: var(--olive-deep); /* filled controls use the deeper sibling of the picked sage so cream text stays legible */
   --primary-foreground: var(--cream);
   --secondary: var(--cream);
   --secondary-foreground: var(--ink);
@@ -111,7 +111,7 @@
   --scrim-side: linear-gradient(90deg, oklch(0.14 0.02 125 / 0.7) 0%, oklch(0.14 0.02 125 / 0.2) 60%, transparent 100%);
 }
 
-.theme-about { --sec: var(--olive); --sec-foreground: var(--paper); --sec-soft: var(--mint); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--gold); }
+.theme-about { --sec: var(--olive-deep); --sec-foreground: var(--paper); --sec-soft: var(--mint); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--gold); }
 .theme-academics { --sec: var(--teal); --sec-foreground: var(--paper); --sec-soft: var(--sky); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--sun); }
 .theme-admissions { --sec: var(--red); --sec-foreground: var(--paper); --sec-soft: var(--blush); --sec-soft-foreground: var(--ink); --sec-accent: var(--sun); }
 .theme-life { --sec: var(--olive-deep); --sec-foreground: var(--paper); --sec-soft: var(--sun); --sec-soft-foreground: var(--olive-deep); --sec-accent: var(--mint); }
