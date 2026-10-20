@@ -46,7 +46,6 @@ function Home() {
         <HeroVideo src={heroVideo.url} poster={images.heroGates} label="Illustrative video of students walking through open school gates" />
         <div className="scrim pointer-events-none absolute inset-0" />
         <div className="scrim-side pointer-events-none absolute inset-0" />
-        <Star className="pointer-events-none absolute right-[8%] top-28 hidden h-48 w-48 text-gold opacity-70 drift md:block" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-36">
           <div className="glass-dark mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold rise">
             <Star className="h-4 w-4 text-gold" strokeWidth={1.75} />
