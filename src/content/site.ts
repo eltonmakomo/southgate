@@ -93,7 +93,7 @@ export const school = {
     },
     {
       title: "Premium Boarding",
-      text: "Our weekly boarding houses offer a warm, closely supervised home away from home, with a maximum of three students per room and structured study time. Students return to their families every weekend, giving them the best of both worlds: a focused, supportive week and quality time at home.",
+      text: "Our weekly boarding houses offer a warm, closely supervised home away from home, with a maximum of four students per room and structured study time. Students return to their families every weekend, giving them the best of both worlds: a focused, supportive week and quality time at home.",
       image: boardingImg,
       section: "student-life",
       page: "boarding",
@@ -102,7 +102,7 @@ export const school = {
   glance: [
     "Forms 1 to 6: from lower secondary through to A-Level",
     "Dual ZIMSEC and Cambridge curriculum",
-    "Premium weekly boarding, maximum three students per room",
+    "Premium weekly boarding, maximum four students per room",
     "Experienced, diverse teaching faculty",
     "Hands on agricultural learning programme",
     "Admissions open for January 2027",
@@ -511,7 +511,7 @@ export const sections: Section[] = [
         image: boardingImg,
         imageAlt: "Illustrative boarding house common room",
         blocks: [
-          p("We welcome families located from across the region and abroad. Our admissions team provides dedicated support for international applications, and our premium boarding facilities, with a maximum of three students per room, offer a comfortable, closely supervised home for students during the school week."),
+          p("We welcome families located from across the region and abroad. Our admissions team provides dedicated support for international applications, and our premium boarding facilities, with a maximum of four students per room, offer a comfortable, closely supervised home for students during the school week."),
           p("We understand that relocating a young person to a new school and country is a significant decision. Our team offers guidance on documentation, orientation support ahead of the first term, and a dedicated point of contact throughout the admissions journey: ensuring boarding and international families feel confident and welcomed from their very first enquiry."),
           { type: "form", form: "enquiry", category: "boarding" },
         ],
@@ -530,7 +530,7 @@ export const sections: Section[] = [
               { q: "Which forms does Southgate Senior School cater for?", a: "We offer Forms 1 to 6, from lower secondary through to A-Level." },
               { q: "Which curricula do you offer?", a: "Both ZIMSEC and Cambridge, taught side by side by experienced staff." },
               { q: "How do students and families choose between ZIMSEC and Cambridge?", a: "Our teachers and admissions team guide families through the options, taking into account each student’s strengths, interests and future plans, including university and career goals." },
-              { q: "Do you offer boarding?", a: "Yes — premium weekly boarding, with a maximum of three students per room." },
+              { q: "Do you offer boarding?", a: "Yes — premium weekly boarding, with a maximum of four students per room." },
               { q: "Is Southgate affiliated with a church?", a: "Yes, the school is proudly affiliated with the Zion Christian Church." },
               { q: "How do I apply?", a: "Begin with an enquiry through our Admissions page — our team will guide you through the full process." },
               { q: "What is the class size at Southgate?", a: "We maintain small class sizes (up to 20 students per class) to ensure every student receives close individual attention from our teachers." },
@@ -556,11 +556,11 @@ export const sections: Section[] = [
       {
         slug: "boarding",
         title: "Boarding",
-        summary: "Premium weekly boarding, a maximum of three students per room.",
+        summary: "Premium weekly boarding, a maximum of four students per room.",
         image: boardingImg,
         imageAlt: "Illustrative boarders relaxing in a common room",
         blocks: [
-          p("Southgate Senior School offers premium weekly boarding, giving students a comfortable, closely supervised home during the school week while returning to their families on weekends. Rooms accommodate a maximum of three students, striking a balance between companionship and comfort. Our boarding houses are staffed by dedicated house parents who provide structure, care and a genuine sense of home."),
+          p("Southgate Senior School offers premium weekly boarding, giving students a comfortable, closely supervised home during the school week while returning to their families on weekends. Rooms accommodate a maximum of four students, striking a balance between companionship and comfort. Our boarding houses are staffed by dedicated house parents who provide structure, care and a genuine sense of home."),
           p("A typical boarding week includes structured prep and study time, supervised meals, sport and cocurricular activities, and dedicated wind down time in the evenings. For senior students, the routine builds independence and good study habits alongside accountability, with additional supervised study support in examination years. Weekends are reserved for family time, allowing students to enjoy the benefits of boarding during the week while remaining closely connected to home."),
           p("Our house parents are carefully selected for their warmth, experience and commitment to student wellbeing, providing round the clock support and a genuine sense of home away from home."),
           { type: "form", form: "enquiry", category: "boarding" },
