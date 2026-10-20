@@ -18,3 +18,6 @@
 - [x] Classroom photo redone from the untouched original: jumpers sage, teacher's black blazer clean (olive smudge gone)
 - [x] Boarding lounge photo replaced with a new picture of Zimbabwean students in sage jumpers (the old one could not be recoloured cleanly)
 - [x] Photo frames no longer crop faces: cards use the photos' own 16:10 shape and page banners favour the top of the picture
+- [ ] Choir photo: recolour uniforms from olive to brand sage green
+- [ ] Admissions + Agriculture cards: replace photos (faces cut in cards) with new pictures
+- [ ] Add the school emblem as chest crest on uniforms in choir, admissions and agriculture photos
