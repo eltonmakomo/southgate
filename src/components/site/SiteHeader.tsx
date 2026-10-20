@@ -132,7 +132,7 @@ export function SiteHeader() {
             <Link
               to="/$section/$page"
               params={{ section: "admissions", page: "how-to-apply" }}
-              className="hidden rounded-md bg-olive px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-olive-deep sm:inline-flex"
+              className="hidden rounded-md bg-olive-deep px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-ink sm:inline-flex"
             >
               Apply for 2027
             </Link>
@@ -192,7 +192,7 @@ export function SiteHeader() {
           <Link
             to="/$section/$page"
             params={{ section: "admissions", page: "how-to-apply" }}
-            className="mt-3 flex justify-center rounded-md bg-olive px-4 py-3 font-semibold text-primary-foreground"
+            className="mt-3 flex justify-center rounded-md bg-olive-deep px-4 py-3 font-semibold text-primary-foreground hover:bg-ink"
           >
             Apply for 2027
           </Link>

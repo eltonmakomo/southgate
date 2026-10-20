@@ -80,7 +80,7 @@
   --card-foreground: var(--ink);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--ink);
-  --primary: var(--olive);
+  --primary: var(--olive-deep); /* filled controls use the deeper sibling of the picked sage so cream text stays legible */
   --primary-foreground: var(--cream);
   --secondary: var(--cream);
   --secondary-foreground: var(--ink);
