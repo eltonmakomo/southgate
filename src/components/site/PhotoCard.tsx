@@ -31,7 +31,7 @@ export function PhotoCard({ section, page, image, imageAlt, eyebrow, title, text
         className,
       )}
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={image}
           alt={imageAlt}

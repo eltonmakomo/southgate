@@ -157,7 +157,7 @@ function Home() {
 
       {/* Community */}
       <section className="relative isolate overflow-hidden bg-teal text-primary-foreground">
-        <img src={images.choirImg} alt="Illustrative image of students singing together" loading="lazy" width={1600} height={1008} className="absolute inset-y-0 right-0 -z-10 hidden h-full w-1/2 object-cover md:block" />
+        <img src={images.choirImg} alt="Illustrative image of students singing together" loading="lazy" width={1600} height={1008} className="absolute inset-y-0 right-0 -z-10 hidden h-full w-1/2 object-cover object-[center_22%] md:block" />
         <div className="mx-auto max-w-7xl px-5 py-24">
           <div className="max-w-xl">
             <Star className="mb-6 h-12 w-12 text-sun" />

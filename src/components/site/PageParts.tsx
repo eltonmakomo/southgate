@@ -24,7 +24,7 @@ export function PageBanner({
 }) {
   return (
     <section data-banner className="relative isolate flex min-h-[70svh] items-end overflow-hidden bg-ink text-primary-foreground">
-      <img src={image} alt={imageAlt} width={1600} height={1008} className="absolute inset-0 -z-10 h-full w-full object-cover" />
+      <img src={image} alt={imageAlt} width={1600} height={1008} className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_22%]" />
       <div className="scrim absolute inset-0 -z-10" />
       <div className="scrim-side absolute inset-0 -z-10" />
       <Star className="absolute right-[6%] top-28 h-40 w-40 text-sec-accent opacity-60 drift sm:h-64 sm:w-64" />
