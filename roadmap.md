@@ -11,3 +11,4 @@
 - [x] New client-supplied emblem (Senior School, "Grow • Learn • Lead") placed in header, footer, homepage and favicon
 - [x] Site renamed to Southgate Senior School; tagline switched to "Grow • Learn • Lead" everywhere, including page titles and meta
 - [x] Opening banner: large drifting gold star removed from over the photo/video; banner verified clean
+- [x] Boarding copy: "maximum of three students per room" changed to four across all six mentions (homepage, admissions, boarding page, FAQ); "three term year" left untouched
