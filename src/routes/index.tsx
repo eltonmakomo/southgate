@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import emblem from "@/assets/southgate-logo-sage.png";
+import emblemAsset from "@/assets/southgate-senior-emblem.png.asset.json";
+const emblem = emblemAsset.url;
 import { images, newsIntro, school, sections } from "@/content/site";
 import { HeroVideo } from "@/components/site/HeroVideo";
 import { PhotoCard } from "@/components/site/PhotoCard";

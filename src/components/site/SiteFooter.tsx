@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import emblem from "@/assets/southgate-logo-sage.png";
+import emblemAsset from "@/assets/southgate-senior-emblem.png.asset.json";
+const emblem = emblemAsset.url;
 import { school, sections } from "@/content/site";
 import { NewsletterForm } from "./Forms";
 import { Star } from "./Star";

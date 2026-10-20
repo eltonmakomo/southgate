@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
-import emblem from "@/assets/southgate-logo-sage.png";
+import emblemAsset from "@/assets/southgate-senior-emblem.png.asset.json";
+const emblem = emblemAsset.url;
 import { sections } from "@/content/site";
 import { cn } from "@/lib/utils";
 
