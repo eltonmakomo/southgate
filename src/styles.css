@@ -59,7 +59,7 @@
 :root {
   --radius: 0.5rem;
 
-  --olive: oklch(0.44568753 0.05322206 128.78250668);
+  --olive: oklch(0.5839 0.0252 110); /* primary green — sampled from the client's reference photo (sage pouch) */
   --olive-deep: color-mix(in oklab, var(--olive) 72%, var(--ink));
   --sage: oklch(0.59595045 0.04954172 121.60101663);
   --gold: oklch(0.73192297 0.11477099 86.37226526);
