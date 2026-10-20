@@ -21,3 +21,4 @@
 - [x] Choir photo: uniforms recoloured from olive to brand sage green
 - [x] Admissions + Agriculture cards: replaced with new photos (all faces fully in frame)
 - [x] School emblem added as chest crest on uniforms in choir, admissions and agriculture photos (old cross crests replaced)
+- [x] Crest audit across all photos: wrong/generic crests replaced with the star-and-book shield in hero-gates, science, leadership and sport; crests added in academics and boarding; verified live on homepage, curriculum, boarding, sport and student-leadership pages
