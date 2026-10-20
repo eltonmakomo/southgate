@@ -11,8 +11,8 @@ export const Route = createFileRoute("/$section/")({
   },
   head: ({ loaderData }) => {
     const section = loaderData ? findSection(loaderData.slug) : undefined;
-    if (!section) return { meta: [{ title: "Page not found — Southgate High School" }, { name: "robots", content: "noindex" }] };
-    const title = `${section.title} — Southgate High School`;
+    if (!section) return { meta: [{ title: "Page not found — Southgate Senior School" }, { name: "robots", content: "noindex" }] };
+    const title = `${section.title} — Southgate Senior School`;
     return {
       meta: [
         { title },

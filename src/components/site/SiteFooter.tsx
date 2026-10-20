@@ -12,10 +12,10 @@ export function SiteFooter() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.1fr_2fr]">
         <div className="flex flex-col gap-6">
           <div className="w-fit rounded-lg bg-paper p-4">
-            <img src={emblem} alt="Southgate High School emblem" width={1681} height={936} loading="lazy" className="h-24 w-auto" />
+            <img src={emblem} alt="Southgate Senior School emblem" width={1681} height={936} loading="lazy" className="h-24 w-auto" />
           </div>
           <p className="max-w-sm text-sm leading-relaxed opacity-85">
-            A private high school in Zimbabwe, proudly affiliated with the Zion Christian Church. Forms 1 to 6 — opening January 2027.
+            A private senior school in Zimbabwe, proudly affiliated with the Zion Christian Church. Forms 1 to 6 — opening January 2027.
           </p>
           <div className="rounded-lg bg-paper p-5 text-foreground">
             <h2 className="mb-1 text-lg">Newsletter</h2>
