@@ -60,14 +60,14 @@ export type Section = {
 };
 
 export const school = {
-  name: "Southgate High School",
-  tagline: "Nurturing Character. Inspiring Excellence.",
+  name: "Southgate Senior School",
+  tagline: "Grow • Learn • Lead",
   headline: "Where Excellence, Character and Faith Take Root",
   subhead:
-    "A private high school in Zimbabwe, proudly affiliated with the Zion Christian Church, welcoming students from Form 1 to Form 6 — admissions open for January 2027.",
+    "A private senior school in Zimbabwe, proudly affiliated with the Zion Christian Church, welcoming students from Form 1 to Form 6 — admissions open for January 2027.",
   intro: [
-    "Southgate High School is being built to give young people an exceptional secondary education: academically, spiritually and personally. Guided by the values of the Zion Christian Church and delivered by an experienced, diverse teaching team, our dual curriculum programme prepares students for success wherever their futures take them, regionally or abroad. We are currently welcoming enquiries and applications ahead of our January 2027 opening.",
-    "The high school years shape the adults our children become. At Southgate, our purpose is simple: to raise young people of academic distinction, strong character and genuine compassion, equipped to thrive at university, at work and in their communities, in Harare, the wider region, or further afield. From our very first intake, we are committed to small class sizes, close pastoral attention, and a campus built for discovery both inside and outside the classroom.",
+    "Southgate Senior School is being built to give young people an exceptional secondary education: academically, spiritually and personally. Guided by the values of the Zion Christian Church and delivered by an experienced, diverse teaching team, our dual curriculum programme prepares students for success wherever their futures take them, regionally or abroad. We are currently welcoming enquiries and applications ahead of our January 2027 opening.",
+    "The senior school years shape the adults our children become. At Southgate, our purpose is simple: to raise young people of academic distinction, strong character and genuine compassion, equipped to thrive at university, at work and in their communities, in Harare, the wider region, or further afield. From our very first intake, we are committed to small class sizes, close pastoral attention, and a campus built for discovery both inside and outside the classroom.",
   ],
   pillars: [
     {
@@ -108,7 +108,7 @@ export const school = {
     "Admissions open for January 2027",
   ],
   community:
-    "Southgate High School is more than a place of learning, it is a community bound together by faith, family and a shared ambition for our young people’s futures. We invite you to be part of our founding story.",
+    "Southgate Senior School is more than a place of learning, it is a community bound together by faith, family and a shared ambition for our young people’s futures. We invite you to be part of our founding story.",
   cta: "Admissions for our January 2027 intake are now open. Begin your enquiry today.",
 };
 
@@ -118,21 +118,21 @@ const list = (items: string[]): Block => ({ type: "list", items });
 export const newsIntro = {
   eyebrow: "News & Updates",
   title: "The Southgate founding story",
-  summary: "Admissions, our founding community and the vision for a new high school opening in January 2027.",
+  summary: "Admissions, our founding community and the vision for a new senior school opening in January 2027.",
 };
 
 // Adapted from the preparatory site's opening, founding-cohort, vision,
 // leadership and campus stories. Its dates, placeholder quotations and
-// unverified construction or enrolment claims do not apply to the high school.
+// unverified construction or enrolment claims do not apply to the senior school.
 export const schoolNews: Page[] = [
   {
     slug: "opening-january-2027",
-    title: "Southgate High School Opens in January 2027",
+    title: "Southgate Senior School Opens in January 2027",
     summary: "Admissions are open for our first intake, from Form 1 through to Form 6.",
     image: admissionsImg,
     imageAlt: "Illustrative family discussing secondary-school admissions",
     blocks: [
-      p("Southgate High School is welcoming enquiries and applications ahead of its January 2027 opening. Our first intake marks the beginning of a new secondary-school community rooted in the values of the Zion Christian Church."),
+      p("Southgate Senior School is welcoming enquiries and applications ahead of its January 2027 opening. Our first intake marks the beginning of a new secondary-school community rooted in the values of the Zion Christian Church."),
       p("From Form 1 to Form 6, our programme brings together ZIMSEC and Cambridge pathways, close academic attention and opportunities to grow through sport, the arts, agriculture and student leadership. Families can enquire about day-school and premium weekly boarding arrangements."),
       p("Our main entry points are Form 1 and Form 5, with applications for other forms considered subject to availability. An academic assessment, family interview and review of previous school reports help us understand each applicant’s strengths and readiness."),
       { type: "form", form: "enquiry", category: "admissions" },
@@ -143,7 +143,7 @@ export const schoolNews: Page[] = [
     title: "Be Part of Southgate’s Founding Cohort",
     summary: "Our first students and their families will help shape the traditions of a new school.",
     image: heroGates,
-    imageAlt: "Illustrative high-school students arriving through school gates",
+    imageAlt: "Illustrative senior-school students arriving through school gates",
     blocks: [
       p("Being part of a founding cohort means more than joining a school. Southgate’s first students will help shape its community, from the first assembly and sporting fixture to the friendships and traditions that future generations will inherit."),
       p("For students beginning Form 1, this is the start of a journey towards confidence, independence and a strong secondary education. For students entering Sixth Form, it is an opportunity to contribute as senior role models while preparing for A-Level examinations and life beyond school."),
@@ -158,7 +158,7 @@ export const schoolNews: Page[] = [
     image: choirImg,
     imageAlt: "Illustrative school choir gathered in a bright hall",
     blocks: [
-      p("The vision behind Southgate is simple: a young person’s character matters as much as their results. Our high school is being built to prepare students academically, spiritually and personally for Zimbabwe, the wider region and the world."),
+      p("The vision behind Southgate is simple: a young person’s character matters as much as their results. Our senior school is being built to prepare students academically, spiritually and personally for Zimbabwe, the wider region and the world."),
       p("Rooted in the Zion Christian Church, our ethos centres on discipline, humility, integrity and service. Daily devotions, chapel services and pastoral support connect these values to the everyday choices students make."),
       p("Academic ambition and care belong together. Small teaching groups, close guidance and a broad co-curricular programme are intended to help students leave Southgate not only with qualifications, but with resilience, compassion and the confidence to contribute to their communities."),
     ],
@@ -170,9 +170,9 @@ export const schoolNews: Page[] = [
     image: leadershipImg,
     imageAlt: "Illustrative students taking part in a library discussion",
     blocks: [
-      p("A strong school needs leadership that brings academic ambition and pastoral responsibility together. Southgate High School’s governance combines Zion Christian Church leadership, experienced educators and community representatives."),
+      p("A strong school needs leadership that brings academic ambition and pastoral responsibility together. Southgate Senior School’s governance combines Zion Christian Church leadership, experienced educators and community representatives."),
       p("Our teaching approach is designed around the demands of secondary education: a confident transition into Form 1, careful preparation for O-Level and IGCSE, and specialist mentoring through Sixth Form. Teachers, tutors and house parents work together to support both learning and wellbeing."),
-      { type: "pending", text: "Named leadership profiles and the Head’s biography will be published once confirmed for Southgate High School." },
+      { type: "pending", text: "Named leadership profiles and the Head’s biography will be published once confirmed for Southgate Senior School." },
     ],
   },
   {
@@ -182,10 +182,10 @@ export const schoolNews: Page[] = [
     image: campusImg,
     imageAlt: "Illustrative school campus with classrooms and landscaped grounds",
     blocks: [
-      p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our high-school students, that means spaces suited to the changing needs of young people from Form 1 through to Form 6."),
+      p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our senior-school students, that means spaces suited to the changing needs of young people from Form 1 through to Form 6."),
       list(["Well-resourced classrooms, science laboratories and ICT facilities", "Library and supervised study spaces for independent learning", "Boarding houses, dining facilities and spaces to relax", "Sports fields and courts, alongside arts and music spaces", "Working agricultural land for hands-on learning and stewardship"]),
       p("Sustainability is part of the school’s values rather than a separate activity. Our agricultural programme connects classroom learning with responsibility for land, resources and the wider community."),
-      { type: "pending", text: "Verified construction milestones, campus photographs and visit arrangements will be shared when confirmed for the high school." },
+      { type: "pending", text: "Verified construction milestones, campus photographs and visit arrangements will be shared when confirmed for the senior school." },
     ],
   },
 ];
@@ -208,7 +208,7 @@ export const sections: Section[] = [
         image: campusImg,
         imageAlt: "Illustrative school campus buildings at golden hour",
         blocks: [
-          p("Southgate High School is a new private institution established under the guidance of the Zion Christian Church, created to meet a growing need for a secondary school that combines academic excellence with strong moral and spiritual foundations. We open our doors to our first students in January 2027, with a campus and programme designed from the ground up to support students through every stage of high school, from Form 1 to Form 6."),
+          p("Southgate Senior School is a new private institution established under the guidance of the Zion Christian Church, created to meet a growing need for a secondary school that combines academic excellence with strong moral and spiritual foundations. We open our doors to our first students in January 2027, with a campus and programme designed from the ground up to support students through every stage of senior school, from Form 1 to Form 6."),
           p("The idea for Southgate was born from a simple observation: that families in Zimbabwe and across the region deserve a school offering the very best of both worlds, an education recognised internationally, and a character formed by deep rooted faith and community values. Backed by the resources and vision of the Zion Christian Church, Southgate has been carefully planned from its curriculum to its campus, ensuring that when our doors open in January 2027, every element is ready to support our founding students."),
         ],
       },
@@ -239,21 +239,21 @@ export const sections: Section[] = [
         image: choirImg,
         imageAlt: "Illustrative school choir singing together in a bright hall",
         blocks: [
-          p("Southgate High School is proudly affiliated with the Zion Christian Church, one of the largest and most respected church communities in the region. This affiliation shapes our ethos of discipline, humility and service, and connects our students to a wider community of faith that extends well beyond the school gates."),
+          p("Southgate Senior School is proudly affiliated with the Zion Christian Church, one of the largest and most respected church communities in the region. This affiliation shapes our ethos of discipline, humility and service, and connects our students to a wider community of faith that extends well beyond the school gates."),
           p("This foundation gives Southgate more than a set of values, it gives our students access to a vast network of fellowship, mentorship and support that stretches across Zimbabwe and beyond. Church leaders, congregants and alumni form an extended family around our school, reinforcing the lessons taught in the classroom with lived examples of faith, discipline and service."),
         ],
       },
       {
         slug: "heads-welcome",
         title: "Head’s Welcome",
-        summary: "A warm welcome to the Southgate High School community.",
+        summary: "A warm welcome to the Southgate Senior School community.",
         image: heroGates,
         imageAlt: "Illustrative students walking through open school gates",
         blocks: [
           {
             type: "quote",
             text: [
-              "A warm welcome to the Southgate High School community. As we prepare to open our doors in January 2027, we are building more than a school: we are building a home for learning, faith and character. We look forward to walking this journey with every family who joins us, from a student’s first day in Form 1 to the day they walk out as a Form 6 graduate, ready for what comes next.",
+              "A warm welcome to the Southgate Senior School community. As we prepare to open our doors in January 2027, we are building more than a school: we are building a home for learning, faith and character. We look forward to walking this journey with every family who joins us, from a student’s first day in Form 1 to the day they walk out as a Form 6 graduate, ready for what comes next.",
               "Our founding team has been carefully assembled: not only for academic expertise, but for a genuine commitment to guiding young people through the demands and opportunities of adolescence. We are excited to welcome our first families and to build, together, a school culture that will be treasured for generations.",
             ],
             cite: "The Head of School",
@@ -268,7 +268,7 @@ export const sections: Section[] = [
         image: leadershipImg,
         imageAlt: "Illustrative student leader speaking to peers",
         blocks: [
-          p("Southgate High School is governed by a board comprising Zion Christian Church leadership, experienced educators and community representatives, ensuring the school is guided by both spiritual conviction and sound educational practice."),
+          p("Southgate Senior School is governed by a board comprising Zion Christian Church leadership, experienced educators and community representatives, ensuring the school is guided by both spiritual conviction and sound educational practice."),
           p("This structure ensures that major decisions, from curriculum direction to campus development, are made with both spiritual integrity and educational excellence in mind. Regular board oversight, combined with a hands on senior leadership team, keeps the school accountable to its founding mission as it grows."),
         ],
       },
@@ -279,7 +279,7 @@ export const sections: Section[] = [
         image: academicsImg,
         imageAlt: "Illustrative teacher guiding students in a classroom",
         blocks: [
-          p("Southgate High School is registered to deliver the ZIMSEC curriculum and is in the process of formal affiliation with Cambridge Assessment International Education, reflecting our commitment to internationally recognised standards of teaching and learning."),
+          p("Southgate Senior School is registered to deliver the ZIMSEC curriculum and is in the process of formal affiliation with Cambridge Assessment International Education, reflecting our commitment to internationally recognised standards of teaching and learning."),
           p("We are committed to meeting and exceeding the requirements of both examining bodies, and to pursuing further affiliations with recognised regional and international schools’ associations as Southgate establishes its track record."),
         ],
       },
@@ -323,7 +323,7 @@ export const sections: Section[] = [
         image: academicsImg,
         imageAlt: "Illustrative classroom with students and teacher",
         blocks: [
-          p("Southgate High School offers a dual curriculum education from Form 1 to Form 6, preparing students for both the ZIMSEC and Cambridge examination pathways. This gives families genuine flexibility, a strong local grounding alongside a globally recognised qualification, taught by an experienced and diverse team of educators recruited specifically for their expertise across both systems."),
+          p("Southgate Senior School offers a dual curriculum education from Form 1 to Form 6, preparing students for both the ZIMSEC and Cambridge examination pathways. This gives families genuine flexibility, a strong local grounding alongside a globally recognised qualification, taught by an experienced and diverse team of educators recruited specifically for their expertise across both systems."),
           p("Our teaching philosophy centres on small class sizes, individual attention and a genuine love of learning. Rather than teaching to a test, our educators are trained to nurture curiosity, critical thinking and confidence, the foundations that carry students successfully through both ZIMSEC and Cambridge assessments and on to university and beyond."),
           p("Students and their families are supported in choosing the pathway and subject combinations best suited to each student’s strengths, interests and future plans, with guidance from teachers and our careers programme at each key decision point."),
         ],
@@ -335,7 +335,7 @@ export const sections: Section[] = [
         image: scienceImg,
         imageAlt: "Illustrative students using microscopes in a science lab",
         blocks: [
-          p("Form 1 and Form 2 students settle into high school life with a broad, balanced curriculum that builds strong foundations in mathematics, languages, sciences, humanities and the creative arts, while developing the independence and study habits that senior school demands."),
+          p("Form 1 and Form 2 students settle into senior school life with a broad, balanced curriculum that builds strong foundations in mathematics, languages, sciences, humanities and the creative arts, while developing the independence and study habits that senior school demands."),
           p("Under the guidance of specialist subject teachers, students are encouraged to ask questions, take initiative and begin to explore the subjects they enjoy most. Tutors and house parents give particular attention to helping new students transition from primary school with confidence, whether as day students or boarders."),
         ],
       },
@@ -409,7 +409,7 @@ export const sections: Section[] = [
         image: academicsImg,
         imageAlt: "Illustrative teacher supporting students",
         blocks: [
-          p("As a newly established school, Southgate High School is built around small class sizes, an experienced faculty and a rigorous dual curriculum standard, giving every student the individual attention needed to thrive academically from day one."),
+          p("As a newly established school, Southgate Senior School is built around small class sizes, an experienced faculty and a rigorous dual curriculum standard, giving every student the individual attention needed to thrive academically from day one."),
           p("We measure success not only in examination outcomes, but in the confidence, curiosity and character our students carry forward. Regular assessment, detailed reporting to parents, and close teacher student relationships ensure that progress, academic and personal, is tracked and celebrated every step of the way."),
           { type: "pending", text: "As a new school opening in January 2027, Southgate does not yet have examination results to publish." },
         ],
@@ -444,7 +444,7 @@ export const sections: Section[] = [
         image: admissionsImg,
         imageAlt: "Illustrative admissions conversation at reception",
         blocks: [
-          p("Joining Southgate High School follows a simple, guided process ahead of our January 2027 opening:"),
+          p("Joining Southgate Senior School follows a simple, guided process ahead of our January 2027 opening:"),
           {
             type: "steps",
             items: [
@@ -476,7 +476,7 @@ export const sections: Section[] = [
         image: campusImg,
         imageAlt: "Illustrative school campus",
         blocks: [
-          p("Southgate High School offers separate fee structures for day and boarding students, with flexible payment plan options available. A detailed fee schedule is provided directly to families upon enquiry."),
+          p("Southgate Senior School offers separate fee structures for day and boarding students, with flexible payment plan options available. A detailed fee schedule is provided directly to families upon enquiry."),
           p("Fees are structured to reflect the premium nature of our facilities, teaching and boarding provision, while flexible termly and annual payment options help families plan with confidence. A comprehensive breakdown, covering tuition, boarding, meals, examination entry and cocurricular activities, is shared directly with every applying family."),
           { type: "form", form: "enquiry", category: "admissions" },
         ],
@@ -499,7 +499,7 @@ export const sections: Section[] = [
         image: agricultureImg,
         imageAlt: "Illustrative students harvesting crops",
         blocks: [
-          p("Southgate High School follows a three term academic year, with our first term commencing in January 2027. A full calendar of term dates and school holidays will be published closer to opening."),
+          p("Southgate Senior School follows a three term academic year, with our first term commencing in January 2027. A full calendar of term dates and school holidays will be published closer to opening."),
           p("Each term combines focused academic study with key events, such as assessments, examination preparation, sporting fixtures, cultural performances and agricultural milestones like planting and harvest activities, giving families a clear rhythm to the school year."),
           { type: "pending", text: "Exact term dates and holidays have not yet been published." },
         ],
@@ -527,7 +527,7 @@ export const sections: Section[] = [
             type: "faq",
             items: [
               { q: "When does the school open?", a: "Our first intake begins in January 2027." },
-              { q: "Which forms does Southgate High School cater for?", a: "We offer Forms 1 to 6, from lower secondary through to A-Level." },
+              { q: "Which forms does Southgate Senior School cater for?", a: "We offer Forms 1 to 6, from lower secondary through to A-Level." },
               { q: "Which curricula do you offer?", a: "Both ZIMSEC and Cambridge, taught side by side by experienced staff." },
               { q: "How do students and families choose between ZIMSEC and Cambridge?", a: "Our teachers and admissions team guide families through the options, taking into account each student’s strengths, interests and future plans, including university and career goals." },
               { q: "Do you offer boarding?", a: "Yes — premium weekly boarding, with a maximum of three students per room." },
@@ -560,7 +560,7 @@ export const sections: Section[] = [
         image: boardingImg,
         imageAlt: "Illustrative boarders relaxing in a common room",
         blocks: [
-          p("Southgate High School offers premium weekly boarding, giving students a comfortable, closely supervised home during the school week while returning to their families on weekends. Rooms accommodate a maximum of three students, striking a balance between companionship and comfort. Our boarding houses are staffed by dedicated house parents who provide structure, care and a genuine sense of home."),
+          p("Southgate Senior School offers premium weekly boarding, giving students a comfortable, closely supervised home during the school week while returning to their families on weekends. Rooms accommodate a maximum of three students, striking a balance between companionship and comfort. Our boarding houses are staffed by dedicated house parents who provide structure, care and a genuine sense of home."),
           p("A typical boarding week includes structured prep and study time, supervised meals, sport and cocurricular activities, and dedicated wind down time in the evenings. For senior students, the routine builds independence and good study habits alongside accountability, with additional supervised study support in examination years. Weekends are reserved for family time, allowing students to enjoy the benefits of boarding during the week while remaining closely connected to home."),
           p("Our house parents are carefully selected for their warmth, experience and commitment to student wellbeing, providing round the clock support and a genuine sense of home away from home."),
           { type: "form", form: "enquiry", category: "boarding" },
@@ -651,7 +651,7 @@ export const sections: Section[] = [
         image: heroGates,
         imageAlt: "Illustrative students in uniform at the school gates",
         blocks: [
-          p("Southgate High School maintains high standards of dress and conduct, reflecting the discipline and pride we instil in every student. Full uniform requirements are provided to enrolled families."),
+          p("Southgate Senior School maintains high standards of dress and conduct, reflecting the discipline and pride we instil in every student. Full uniform requirements are provided to enrolled families."),
           p("Our code of conduct is rooted in respect, for oneself, for others and for the school community, and is reinforced consistently across the classroom, boarding houses and cocurricular activities."),
         ],
       },
@@ -673,7 +673,7 @@ export const sections: Section[] = [
     title: "News & Events",
     navTitle: "News & Events",
     theme: "news",
-    intro: "Follow our founding story, admissions updates and vision for Southgate High School, alongside the calendar, gallery and newsletters.",
+    intro: "Follow our founding story, admissions updates and vision for Southgate Senior School, alongside the calendar, gallery and newsletters.",
     image: choirImg,
     imageAlt: "Illustrative students singing together",
     pages: [
@@ -684,7 +684,7 @@ export const sections: Section[] = [
         image: campusImg,
         imageAlt: "Illustrative school campus",
         blocks: [
-          p("Follow the founding story of Southgate High School as we prepare to welcome students in January 2027. Explore our admissions announcement, meet the vision behind the school and discover how our founding community will take shape."),
+          p("Follow the founding story of Southgate Senior School as we prepare to welcome students in January 2027. Explore our admissions announcement, meet the vision behind the school and discover how our founding community will take shape."),
           { type: "news" },
         ],
       },
@@ -767,7 +767,7 @@ export const sections: Section[] = [
         image: campusImg,
         imageAlt: "Illustrative campus grounds",
         blocks: [
-          p("Find directions and location details for the Southgate High School campus here."),
+          p("Find directions and location details for the Southgate Senior School campus here."),
           p("Full address details, a campus map and directions by road will be provided here, along with guidance for families travelling from further afield."),
           { type: "pending", text: "The campus address and map have not yet been provided." },
         ],
@@ -779,7 +779,7 @@ export const sections: Section[] = [
         image: academicsImg,
         imageAlt: "Illustrative teacher with students",
         blocks: [
-          p("Southgate High School is proud to have recruited an experienced and diverse teaching team ahead of our January 2027 opening. We continue to welcome applications from passionate, qualified educators who share our commitment to excellence and character."),
+          p("Southgate Senior School is proud to have recruited an experienced and diverse teaching team ahead of our January 2027 opening. We continue to welcome applications from passionate, qualified educators who share our commitment to excellence and character."),
           p("We are seeking passionate, qualified educators across both the ZIMSEC and Cambridge curricula, including subject specialists for O-Level, IGCSE and A-Level teaching, as well as boarding house parents, sports coaches and support staff who share our commitment to nurturing well rounded, high achieving students. Prospective staff can submit applications and CVs through this page."),
           { type: "form", form: "careers" },
         ],

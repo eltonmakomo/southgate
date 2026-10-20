@@ -12,9 +12,9 @@ import { Star } from "@/components/site/Star";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Southgate High School — Forms 1 to 6, opening January 2027" },
+      { title: "Southgate Senior School — Forms 1 to 6, opening January 2027" },
       { name: "description", content: school.subhead },
-      { property: "og:title", content: "Southgate High School — Nurturing Character. Inspiring Excellence." },
+      { property: "og:title", content: "Southgate Senior School — Grow • Learn • Lead" },
       { property: "og:description", content: school.subhead },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,7 +52,7 @@ function Home() {
             <Star className="h-4 w-4 text-gold" strokeWidth={1.75} />
             Opening January 2027 · Forms 1 to 6
           </div>
-          <h1 className="text-hero rise">Southgate<br />High School</h1>
+          <h1 className="text-hero rise">Southgate<br />Senior School</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed opacity-95 sm:text-xl rise">{school.subhead}</p>
           <div className="mt-8 flex flex-wrap gap-3 rise">
             <Link to="/$section/$page" params={{ section: "admissions", page: "how-to-apply" }} className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gold px-6 py-3 font-semibold text-ink hover:bg-sun">
@@ -77,7 +77,7 @@ function Home() {
         <Star className="absolute -left-20 top-16 h-72 w-72 text-olive opacity-[0.07]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[1fr_1.3fr] lg:items-center lg:py-28">
           <div className="flex flex-col items-start gap-6">
-            <img src={emblem} alt="Southgate High School emblem: open gates, a star and an open book" width={1681} height={936} loading="lazy" className="w-full max-w-md" />
+            <img src={emblem} alt="Southgate Senior School emblem: open gates, a star and an open book" width={1681} height={936} loading="lazy" className="w-full max-w-md" />
           </div>
           <div>
             <p className="eyebrow mb-4 text-rose">Welcome to Southgate</p>

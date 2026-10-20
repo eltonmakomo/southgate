@@ -67,10 +67,10 @@ export function SiteHeader() {
         <Link
           to="/"
           className={cn("relative flex shrink-0 items-center gap-2 transition-opacity duration-300 sm:gap-3", past && "invisible opacity-0")}
-          aria-label="Southgate High School home"
+          aria-label="Southgate Senior School home"
           tabIndex={past ? -1 : undefined}
         >
-          <img src={emblem} alt="Southgate High School emblem" width={1681} height={936} className="h-14 w-auto shrink-0 object-contain sm:h-16" />
+          <img src={emblem} alt="Southgate Senior School emblem" width={1681} height={936} className="h-14 w-auto shrink-0 object-contain sm:h-16" />
         </Link>
 
         <nav aria-label="Main" className={cn("relative hidden", !past && "xl:block")}>

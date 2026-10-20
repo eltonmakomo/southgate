@@ -162,7 +162,7 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
         <textarea id="message" name="message" rows={5} className={fieldBase} aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined} />
       </Field>
       <Consent id="enquiry-consent" error={errors.consent}>
-        I agree that Southgate High School may store these details and contact me about this enquiry.
+        I agree that Southgate Senior School may store these details and contact me about this enquiry.
       </Consent>
       <StatusLine status={status} success="Thank you — your enquiry has been received. Our team will be in touch." />
       <div><SubmitButton sending={status.state === "sending"}>Send enquiry</SubmitButton></div>
@@ -306,7 +306,7 @@ export function CareersForm() {
         <input id="c-cv" name="cv" type="file" accept="application/pdf,.pdf" className={cn(fieldBase, "file:mr-3 file:rounded file:border-0 file:bg-sec file:px-3 file:py-1.5 file:font-semibold file:text-sec-foreground")} aria-invalid={!!errors.cv} />
       </Field>
       <Consent id="c-consent" error={errors.consent}>
-        I agree that Southgate High School may store my application and CV for recruitment purposes.
+        I agree that Southgate Senior School may store my application and CV for recruitment purposes.
       </Consent>
       <StatusLine status={status} success="Thank you — your application and CV have been received." />
       <div><SubmitButton sending={status.state === "sending"}>Submit application</SubmitButton></div>
