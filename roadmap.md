@@ -15,3 +15,6 @@
 - [x] Primary green: picked from the client's reference photo (#7C7D6C sage) and applied site-wide; filled buttons use its deeper sibling so cream text stays legible
 - [x] Choir photo: the Christian cross on the "Faith" banner replaced with a gold five-pointed star inside the shield; rest of the photo untouched; verified on homepage community band, ZCC Foundation and Arts & Culture pages
 - [x] Uniforms: blazers/jumpers recoloured to the brand sage green in six photos (opening banner, uniform page, admissions, classroom, science lab, library); boarding photo left unchanged (recolour kept splitting the jumper)
+- [x] Classroom photo redone from the untouched original: jumpers sage, teacher's black blazer clean (olive smudge gone)
+- [x] Boarding lounge photo replaced with a new picture of Zimbabwean students in sage jumpers (the old one could not be recoloured cleanly)
+- [x] Photo frames no longer crop faces: cards use the photos' own 16:10 shape and page banners favour the top of the picture
