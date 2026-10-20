@@ -10,3 +10,4 @@
 - [x] Header bar: glass background now paints unconditionally (no longer depends on backdrop-filter support or a negative-z layer), so the bar can't vanish on some browsers
 - [x] New client-supplied emblem (Senior School, "Grow • Learn • Lead") placed in header, footer, homepage and favicon
 - [x] Site renamed to Southgate Senior School; tagline switched to "Grow • Learn • Lead" everywhere, including page titles and meta
+- [x] Opening banner: large drifting gold star removed from over the photo/video; banner verified clean
