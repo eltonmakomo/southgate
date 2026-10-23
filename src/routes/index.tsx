@@ -12,7 +12,7 @@ import { Star } from "@/components/site/Star";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Southgate Senior School — Forms 1 to 6, opening January 2027" },
+      { title: school.pageTitle },
       { name: "description", content: school.subhead },
       { property: "og:title", content: "Southgate Senior School — Grow • Learn • Lead" },
       { property: "og:description", content: school.subhead },
@@ -49,7 +49,7 @@ function Home() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-36">
           <div className="glass-dark mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold rise">
             <Star className="h-4 w-4 text-gold" strokeWidth={1.75} />
-            Opening January 2027 · Forms 1 to 6
+            {school.openingBadge}
           </div>
           <h1 className="text-hero rise">Southgate<br />Senior School</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed opacity-95 sm:text-xl rise">{school.subhead}</p>

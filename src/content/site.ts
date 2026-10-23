@@ -69,9 +69,12 @@ export type Section = {
 export const school = {
   name: "Southgate Senior School",
   tagline: "Grow • Learn • Lead",
+  openingBadge: "Opening January 2027",
+  pageTitle: "Southgate Senior School — Opening January 2027",
+  footerSummary: "A private senior school in Zimbabwe, proudly affiliated with the Zion Christian Church. Opening January 2027.",
   headline: "Where Excellence, Character and Faith Take Root",
   subhead:
-    "A private senior school in Zimbabwe, proudly affiliated with the Zion Christian Church, welcoming students from Form 1 to Form 6 — admissions open for January 2027.",
+    "A private senior school in Zimbabwe, proudly affiliated with the Zion Christian Church — admissions open for January 2027.",
   intro: [
     "Southgate Senior School is being built to give young people an exceptional secondary education: academically, spiritually and personally. Guided by the values of the Zion Christian Church and delivered by an experienced, diverse teaching team, our dual curriculum programme prepares students for success wherever their futures take them, regionally or abroad. We are currently welcoming enquiries and applications ahead of our January 2027 opening.",
     "The senior school years shape the adults our children become. At Southgate, our purpose is simple: to raise young people of academic distinction, strong character and genuine compassion, equipped to thrive at university, at work and in their communities, in Harare, the wider region, or further afield. From our very first intake, we are committed to small class sizes, close pastoral attention, and a campus built for discovery both inside and outside the classroom.",
@@ -79,7 +82,7 @@ export const school = {
   pillars: [
     {
       title: "Academic Excellence",
-      text: "From Form 1 through to Form 6, our students follow the ZIMSEC and Cambridge curricula side by side, taught by experienced, internationally minded educators who bring rigour and care to every classroom. Small class sizes mean no student is overlooked, and a broad subject offering ensures every young person finds their strengths and a clear path to the qualifications they need.",
+      text: "Our students follow the ZIMSEC and Cambridge curricula side by side, taught by experienced, internationally minded educators who bring rigour and care to every classroom. Small class sizes mean no student is overlooked, and a broad subject offering ensures every young person finds their strengths and a clear path to the qualifications they need.",
       image: academicsImg,
       section: "academics",
       page: "curriculum-overview",
@@ -107,7 +110,7 @@ export const school = {
     },
   ],
   glance: [
-    "Forms 1 to 6: from lower secondary through to A-Level",
+    "Secondary education through to A-Level",
     "Dual ZIMSEC and Cambridge curriculum",
     "Premium weekly boarding, maximum four students per room",
     "Experienced, diverse teaching faculty",
@@ -135,12 +138,12 @@ export const schoolNews: Page[] = [
   {
     slug: "opening-january-2027",
     title: "Southgate Senior School Opens in January 2027",
-    summary: "Admissions are open for our first intake, from Form 1 through to Form 6.",
+    summary: "Admissions are open for our first intake in January 2027.",
     image: admissionsImg,
     imageAlt: "Illustrative family discussing secondary-school admissions",
     blocks: [
       p("Southgate Senior School is welcoming enquiries and applications ahead of its January 2027 opening. Our first intake marks the beginning of a new secondary-school community rooted in the values of the Zion Christian Church."),
-      p("From Form 1 to Form 6, our programme brings together ZIMSEC and Cambridge pathways, close academic attention and opportunities to grow through sport, the arts, agriculture and student leadership. Families can enquire about day-school and premium weekly boarding arrangements."),
+      p("Our senior school programme brings together ZIMSEC and Cambridge pathways, close academic attention and opportunities to grow through sport, the arts, agriculture and student leadership. Families can enquire about day-school and premium weekly boarding arrangements."),
       p("Our main entry points are Form 1 and Form 5, with applications for other forms considered subject to availability. An academic assessment, family interview and review of previous school reports help us understand each applicant’s strengths and readiness."),
       { type: "form", form: "enquiry", category: "admissions" },
     ],
@@ -189,7 +192,7 @@ export const schoolNews: Page[] = [
     image: campusImg,
     imageAlt: "Illustrative school campus with classrooms and landscaped grounds",
     blocks: [
-      p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our senior-school students, that means spaces suited to the changing needs of young people from Form 1 through to Form 6."),
+      p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our senior-school students, that means spaces suited to the changing needs of young people throughout their senior school education."),
       list(["Well-resourced classrooms, science laboratories and ICT facilities", "Library and supervised study spaces for independent learning", "Boarding houses, dining facilities and spaces to relax", "Sports fields and courts, alongside arts and music spaces", "Working agricultural land for hands-on learning and stewardship"]),
       p("Sustainability is part of the school’s values rather than a separate activity. Our agricultural programme connects classroom learning with responsibility for land, resources and the wider community."),
       { type: "pending", text: "Verified construction milestones, campus photographs and visit arrangements will be shared when confirmed for the senior school." },
@@ -215,7 +218,7 @@ export const sections: Section[] = [
         image: campusImg,
         imageAlt: "Illustrative school campus buildings at golden hour",
         blocks: [
-          p("Southgate Senior School is a new private institution established under the guidance of the Zion Christian Church, created to meet a growing need for a secondary school that combines academic excellence with strong moral and spiritual foundations. We open our doors to our first students in January 2027, with a campus and programme designed from the ground up to support students through every stage of senior school, from Form 1 to Form 6."),
+          p("Southgate Senior School is a new private institution established under the guidance of the Zion Christian Church, created to meet a growing need for a secondary school that combines academic excellence with strong moral and spiritual foundations. We open our doors to our first students in January 2027, with a campus and programme designed from the ground up to support students through every stage of senior school."),
           p("The idea for Southgate was born from a simple observation: that families in Zimbabwe and across the region deserve a school offering the very best of both worlds, an education recognised internationally, and a character formed by deep rooted faith and community values. Backed by the resources and vision of the Zion Christian Church, Southgate has been carefully planned from its curriculum to its campus, ensuring that when our doors open in January 2027, every element is ready to support our founding students."),
         ],
       },
@@ -260,7 +263,7 @@ export const sections: Section[] = [
           {
             type: "quote",
             text: [
-              "A warm welcome to the Southgate Senior School community. As we prepare to open our doors in January 2027, we are building more than a school: we are building a home for learning, faith and character. We look forward to walking this journey with every family who joins us, from a student’s first day in Form 1 to the day they walk out as a Form 6 graduate, ready for what comes next.",
+              "A warm welcome to the Southgate Senior School community. As we prepare to open our doors in January 2027, we are building more than a school: we are building a home for learning, faith and character. We look forward to walking this journey with every family who joins us, from a student’s first day at Southgate to graduation, ready for what comes next.",
               "Our founding team has been carefully assembled: not only for academic expertise, but for a genuine commitment to guiding young people through the demands and opportunities of adolescence. We are excited to welcome our first families and to build, together, a school culture that will be treasured for generations.",
             ],
             cite: "The Head of School",
@@ -299,7 +302,7 @@ export const sections: Section[] = [
         blocks: [
           p("Our campus has been designed to support learning both inside and outside the classroom, with every space built to be safe, stimulating and suited to the needs of young people:"),
           list([
-            "Modern, digitised and well resourced classrooms for Forms 1 to 6",
+            "Modern, digitised and well resourced classrooms for senior school students",
             "Science laboratories and ICT facilities to support practical and coursework requirements",
             "Library and supervised study spaces",
             "Boarding houses with homelike common areas and dining facilities",
@@ -319,18 +322,18 @@ export const sections: Section[] = [
     navTitle: "Academics",
     theme: "academics",
     intro:
-      "A dual ZIMSEC and Cambridge education from Form 1 to Form 6, built on small classes, individual attention and a genuine love of learning.",
+      "A dual ZIMSEC and Cambridge senior school education, built on small classes, individual attention and a genuine love of learning.",
     image: academicsImg,
     imageAlt: "Illustrative teacher working with a small group of students",
     pages: [
       {
         slug: "curriculum-overview",
         title: "Curriculum Overview",
-        summary: "ZIMSEC and Cambridge pathways, side by side, from Form 1 to Form 6.",
+        summary: "ZIMSEC and Cambridge pathways, side by side.",
         image: academicsImg,
         imageAlt: "Illustrative classroom with students and teacher",
         blocks: [
-          p("Southgate Senior School offers a dual curriculum education from Form 1 to Form 6, preparing students for both the ZIMSEC and Cambridge examination pathways. This gives families genuine flexibility, a strong local grounding alongside a globally recognised qualification, taught by an experienced and diverse team of educators recruited specifically for their expertise across both systems."),
+          p("Southgate Senior School offers a dual curriculum senior school education, preparing students for both the ZIMSEC and Cambridge examination pathways. This gives families genuine flexibility, a strong local grounding alongside a globally recognised qualification, taught by an experienced and diverse team of educators recruited specifically for their expertise across both systems."),
           p("Our teaching philosophy centres on small class sizes, individual attention and a genuine love of learning. Rather than teaching to a test, our educators are trained to nurture curiosity, critical thinking and confidence, the foundations that carry students successfully through both ZIMSEC and Cambridge assessments and on to university and beyond."),
           p("Students and their families are supported in choosing the pathway and subject combinations best suited to each student’s strengths, interests and future plans, with guidance from teachers and our careers programme at each key decision point."),
         ],
@@ -534,7 +537,7 @@ export const sections: Section[] = [
             type: "faq",
             items: [
               { q: "When does the school open?", a: "Our first intake begins in January 2027." },
-              { q: "Which forms does Southgate Senior School cater for?", a: "We offer Forms 1 to 6, from lower secondary through to A-Level." },
+              { q: "Which forms does Southgate Senior School cater for?", a: "We offer secondary education through to A-Level." },
               { q: "Which curricula do you offer?", a: "Both ZIMSEC and Cambridge, taught side by side by experienced staff." },
               { q: "How do students and families choose between ZIMSEC and Cambridge?", a: "Our teachers and admissions team guide families through the options, taking into account each student’s strengths, interests and future plans, including university and career goals." },
               { q: "Do you offer boarding?", a: "Yes — premium weekly boarding, with a maximum of four students per room." },
