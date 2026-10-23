@@ -1,13 +1,20 @@
-import heroGates from "@/assets/hero-gates.jpg";
-import academicsImg from "@/assets/academics.jpg";
-import scienceImg from "@/assets/science.jpg";
+import heroGatesAsset from "@/assets/gates-hd.png.asset.json";
+const heroGates = heroGatesAsset.url;
+import academicsImgAsset from "@/assets/academics-hd.png.asset.json";
+const academicsImg = academicsImgAsset.url;
+import scienceImgAsset from "@/assets/science-new.png.asset.json";
+const scienceImg = scienceImgAsset.url;
 import agricultureImg from "@/assets/agriculture.jpg";
-import boardingImg from "@/assets/boarding.jpg";
+import boardingImgAsset from "@/assets/boarding-hd.png.asset.json";
+const boardingImg = boardingImgAsset.url;
 import sportImg from "@/assets/sport.jpg";
-import choirImg from "@/assets/choir.jpg";
-import admissionsImg from "@/assets/admissions.jpg";
+import choirImgAsset from "@/assets/music-new.png.asset.json";
+const choirImg = choirImgAsset.url;
+import admissionsImgAsset from "@/assets/admissions-new.png.asset.json";
+const admissionsImg = admissionsImgAsset.url;
 import campusImg from "@/assets/campus.jpg";
-import leadershipImg from "@/assets/leadership.jpg";
+import leadershipImgAsset from "@/assets/leadership-hd.png.asset.json";
+const leadershipImg = leadershipImgAsset.url;
 
 export const images = {
   heroGates,
