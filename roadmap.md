@@ -23,3 +23,4 @@
 - [x] School emblem added as chest crest on uniforms in choir, admissions and agriculture photos (old cross crests replaced)
 - [x] Crest audit across all photos: wrong/generic crests replaced with the star-and-book shield in hero-gates, science, leadership and sport; crests added in academics and boarding; verified live on homepage, curriculum, boarding, sport and student-leadership pages
 - [ ] Uniform crests updated to the client-uploaded gate-star-book emblem: done in science, choir, boarding, admissions and agriculture; still pending in hero-gates, leadership, academics and sport (crest masks missed the real crest position — redraw masks and re-run)
+- [ ] Use the client's second batch of 4 photos on the site
