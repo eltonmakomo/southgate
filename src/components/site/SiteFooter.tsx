@@ -15,7 +15,7 @@ export function SiteFooter() {
             <img src={emblem} alt="Southgate Senior School emblem" width={1681} height={936} loading="lazy" className="h-24 w-auto" />
           </div>
           <p className="max-w-sm text-sm leading-relaxed opacity-85">
-            A private senior school in Zimbabwe, proudly affiliated with the Zion Christian Church. Forms 1 to 6 — opening January 2027.
+            {school.footerSummary}
           </p>
           <div className="rounded-lg bg-paper p-5 text-foreground">
             <h2 className="mb-1 text-lg">Newsletter</h2>
