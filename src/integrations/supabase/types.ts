@@ -14,6 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
+      admission_applications: {
+        Row: {
+          admission_term: string
+          admission_year: string
+          boarding_option: string | null
+          child_first_name: string
+          child_last_name: string
+          consent: boolean
+          created_at: string
+          current_school: string | null
+          date_of_birth: string
+          email: string
+          form_applying: string
+          heard_from: string | null
+          id: string
+          message: string | null
+          parent_first_name: string
+          parent_last_name: string
+          phone: string
+          relationship: string
+        }
+        Insert: {
+          admission_term: string
+          admission_year: string
+          boarding_option?: string | null
+          child_first_name: string
+          child_last_name: string
+          consent?: boolean
+          created_at?: string
+          current_school?: string | null
+          date_of_birth: string
+          email: string
+          form_applying: string
+          heard_from?: string | null
+          id?: string
+          message?: string | null
+          parent_first_name: string
+          parent_last_name: string
+          phone: string
+          relationship: string
+        }
+        Update: {
+          admission_term?: string
+          admission_year?: string
+          boarding_option?: string | null
+          child_first_name?: string
+          child_last_name?: string
+          consent?: boolean
+          created_at?: string
+          current_school?: string | null
+          date_of_birth?: string
+          email?: string
+          form_applying?: string
+          heard_from?: string | null
+          id?: string
+          message?: string | null
+          parent_first_name?: string
+          parent_last_name?: string
+          phone?: string
+          relationship?: string
+        }
+        Relationships: []
+      }
       career_applications: {
         Row: {
           consent: boolean
