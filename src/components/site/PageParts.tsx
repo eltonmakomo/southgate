@@ -204,8 +204,6 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
 export function AdmissionsCta() {
   return (
     <section className="theme-admissions relative overflow-hidden bg-sec text-sec-foreground">
-      <Star className="absolute -right-10 -top-10 h-72 w-72 text-sec-accent opacity-40 drift" />
-      <Star className="absolute bottom-6 left-[40%] h-8 w-8 opacity-50" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-5 py-20 md:flex-row md:items-end md:justify-between">
         <div className="max-w-3xl">
           <p className="eyebrow mb-4 text-sec-accent">January 2027 intake</p>
