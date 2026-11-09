@@ -1,7 +1,7 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { CheckCircle2, Loader2, AlertCircle } from "lucide-react";
-import { submitCareers, submitEnquiry, submitNewsletter } from "@/lib/forms.functions";
+import { submitApplication, submitCareers, submitEnquiry, submitNewsletter } from "@/lib/forms.functions";
 import type { EnquiryCategory } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -128,7 +128,7 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
   return (
     <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-5">
       <Honeypot />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <FormSection title="Your Enquiry" subtitle="Tell us how we can help">
         <Field id="category" label="Enquiry type" required>
           <select id="category" name="category" defaultValue={defaultCategory} className={fieldBase}>
             <option value="admissions">Admissions enquiry</option>
@@ -145,6 +145,8 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
             ))}
           </select>
         </Field>
+      </FormSection>
+      <FormSection title="Your Details" subtitle="Your contact information">
         <Field id="fullName" label="Your full name" required error={errors.fullName}>
           <input id="fullName" name="fullName" autoComplete="name" className={fieldBase} aria-invalid={!!errors.fullName} aria-describedby={errors.fullName ? "fullName-error" : undefined} />
         </Field>
@@ -157,10 +159,14 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
         <Field id="studentName" label="Student’s name">
           <input id="studentName" name="studentName" className={fieldBase} />
         </Field>
-      </div>
-      <Field id="message" label="Your message" required error={errors.message}>
-        <textarea id="message" name="message" rows={5} className={fieldBase} aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined} />
-      </Field>
+      </FormSection>
+      <FormSection title="Additional Information" subtitle="Anything else you'd like us to know?">
+        <div className="sm:col-span-2">
+          <Field id="message" label="Your message" required error={errors.message}>
+            <textarea id="message" name="message" rows={5} className={fieldBase} aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined} />
+          </Field>
+        </div>
+      </FormSection>
       <Consent id="enquiry-consent" error={errors.consent}>
         I agree that Southgate Senior School may store these details and contact me about this enquiry.
       </Consent>
@@ -285,7 +291,7 @@ export function CareersForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-5">
       <Honeypot />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <FormSection title="Your Details" subtitle="Your contact information">
         <Field id="c-name" label="Your full name" required error={errors.fullName}>
           <input id="c-name" name="fullName" autoComplete="name" className={fieldBase} aria-invalid={!!errors.fullName} />
         </Field>
@@ -298,10 +304,14 @@ export function CareersForm() {
         <Field id="c-position" label="Role of interest" required error={errors.position}>
           <input id="c-position" name="position" placeholder="e.g. A-Level Mathematics teacher" className={fieldBase} aria-invalid={!!errors.position} />
         </Field>
-      </div>
+      </FormSection>
+      <FormSection title="Additional Information" subtitle="Your cover note and CV">
+        <div className="sm:col-span-2">
       <Field id="c-message" label="Cover note">
         <textarea id="c-message" name="message" rows={4} className={fieldBase} />
       </Field>
+        </div>
+        <div className="sm:col-span-2">
       <Field id="c-cv" label="CV (PDF only, max 2MB)" required error={errors.cv}>
         <input id="c-cv" name="cv" type="file" accept="application/pdf,.pdf" className={cn(fieldBase, "file:mr-3 file:rounded file:border-0 file:bg-sec file:px-3 file:py-1.5 file:font-semibold file:text-sec-foreground")} aria-invalid={!!errors.cv} />
       </Field>
@@ -310,6 +320,120 @@ export function CareersForm() {
       </Consent>
       <StatusLine status={status} success="Thank you — your application and CV have been received." />
       <div><SubmitButton sending={status.state === "sending"}>Submit application</SubmitButton></div>
+    </form>
+  );
+}
+
+export function FormSection({ title, subtitle, children }: { title: string; subtitle: string; children: ReactNode }) {
+  return (
+    <fieldset className="rounded-lg border border-border bg-background/60 p-5 sm:p-7">
+      <legend className="sr-only">{title}</legend>
+      <div className="mb-5 border-b border-border pb-4">
+        <h3 className="font-display text-lg text-foreground">{title}</h3>
+        <p className="text-sm text-muted-foreground">{subtitle}</p>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2">{children}</div>
+    </fieldset>
+  );
+}
+
+type AppErrs = Record<string, string>;
+const REQUIRED_APP: [string, string][] = [
+  ["parentFirstName", "Please enter your first name"],
+  ["parentLastName", "Please enter your last name"],
+  ["relationship", "Please select your relationship to the child"],
+  ["childFirstName", "Please enter the child's first name"],
+  ["childLastName", "Please enter the child's last name"],
+  ["dateOfBirth", "Please enter the date of birth"],
+  ["formApplying", "Please select a form"],
+  ["admissionYear", "Please select an admission year"],
+  ["admissionTerm", "Please select an admission term"],
+];
+
+export function ApplicationForm() {
+  const send = useServerFn(submitApplication);
+  const [status, setStatus] = useState<Status>({ state: "idle" });
+  const [errors, setErrors] = useState<AppErrs>({});
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const v = (k: string) => String(fd.get(k) ?? "").trim();
+    const errs: AppErrs = {};
+    for (const [k, m] of REQUIRED_APP) if (!v(k)) errs[k] = m;
+    if (!EMAIL_RE.test(v("email"))) errs.email = "Please enter a valid email address";
+    if (v("phone").length < 5) errs.phone = "Please enter a phone number";
+    if (!fd.get("consent")) errs.consent = "Please confirm the information is accurate";
+    setErrors(errs);
+    if (Object.keys(errs).length) return;
+    setStatus({ state: "sending" });
+    try {
+      const keys = ["parentFirstName","parentLastName","email","phone","relationship","childFirstName","childLastName","dateOfBirth","currentSchool","formApplying","admissionYear","admissionTerm","boardingOption","heardFrom","message","website"];
+      const data: Record<string, unknown> = { consent: true };
+      for (const k of keys) data[k] = v(k);
+      const res = await send({ data: data as never });
+      if (res.ok) {
+        setStatus({ state: "done" });
+        setErrors({});
+        form.reset();
+      } else setStatus({ state: "error", message: res.error });
+    } catch {
+      setStatus({ state: "error", message: "Something went wrong. Please check your details and try again." });
+    }
+  }
+
+  const input = (id: string, label: string, opts: { required?: boolean; type?: string; auto?: string } = {}) => (
+    <Field id={`ap-${id}`} label={label} required={opts.required} error={errors[id]}>
+      <input id={`ap-${id}`} name={id} type={opts.type ?? "text"} autoComplete={opts.auto} className={fieldBase} aria-invalid={!!errors[id]} />
+    </Field>
+  );
+  const select = (id: string, label: string, placeholder: string, options: string[], required = false) => (
+    <Field id={`ap-${id}`} label={label} required={required} error={errors[id]}>
+      <select id={`ap-${id}`} name={id} defaultValue="" className={fieldBase} aria-invalid={!!errors[id]}>
+        <option value="">{placeholder}</option>
+        {options.map((o) => <option key={o} value={o}>{o}</option>)}
+      </select>
+    </Field>
+  );
+
+  return (
+    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-6">
+      <Honeypot />
+      <FormSection title="Parent / Guardian Details" subtitle="Your contact information">
+        {input("parentFirstName", "First Name", { required: true, auto: "given-name" })}
+        {input("parentLastName", "Last Name", { required: true, auto: "family-name" })}
+        {input("email", "Email Address", { required: true, type: "email", auto: "email" })}
+        {input("phone", "Phone Number", { required: true, type: "tel", auto: "tel" })}
+        {select("relationship", "Relationship to Child", "Select relationship", ["Mother", "Father", "Guardian", "Other"], true)}
+      </FormSection>
+      <FormSection title="Child's Details" subtitle="Tell us about the child applying">
+        {input("childFirstName", "Child's First Name", { required: true })}
+        {input("childLastName", "Child's Last Name", { required: true })}
+        {input("dateOfBirth", "Date of Birth", { required: true, type: "date" })}
+        {input("currentSchool", "Current School")}
+      </FormSection>
+      <FormSection title="Admission Details" subtitle="Tell us what you're looking for">
+        {select("formApplying", "Form Applying For", "Select form", [...FORMS, "Other"], true)}
+        {select("admissionYear", "Preferred Admission Year", "Select admission year", ["2027", "2028", "2029"], true)}
+        {select("admissionTerm", "Preferred Admission Term", "Select admission term", ["Term 1", "Term 2", "Term 3"], true)}
+        {select("boardingOption", "Boarding or Day", "Select an option", ["Boarding", "Day scholar", "Not sure yet"])}
+        {select("heardFrom", "How did you hear about Southgate?", "Select an option", ["Google", "Social Media", "Friend or Family", "School Event", "Referral", "Other"])}
+      </FormSection>
+      <fieldset className="rounded-lg border border-border bg-background/60 p-5 sm:p-7">
+        <div className="mb-5 border-b border-border pb-4">
+          <h3 className="font-display text-lg text-foreground">Additional Information</h3>
+          <p className="text-sm text-muted-foreground">Anything else you'd like us to know?</p>
+        </div>
+        <Field id="ap-message" label="Message">
+          <textarea id="ap-message" name="message" rows={5} className={fieldBase} />
+        </Field>
+      </fieldset>
+      <Consent id="ap-consent" error={errors.consent}>
+        I confirm that the information provided above is accurate and I consent to Southgate Senior School contacting me regarding this application.
+      </Consent>
+      <StatusLine status={status} success="Thank you — your application has been received. Our admissions team will be in touch regarding the next steps." />
+      <div><SubmitButton sending={status.state === "sending"}>Submit Application</SubmitButton></div>
     </form>
   );
 }
