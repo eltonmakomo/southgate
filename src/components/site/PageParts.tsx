@@ -85,7 +85,6 @@ export function SectionNav({ section, current }: { section: Section; current?: s
                   active && "bg-sec-soft font-semibold text-sec-soft-foreground",
                 )}
               >
-                <span className="w-6 font-display text-xs text-sec">{String(i + 1).padStart(2, "0")}</span>
                 <span className="flex-1">{pg.title}</span>
                 <ArrowRight className="hidden h-3.5 w-3.5 opacity-50 transition-transform group-hover:translate-x-0.5 lg:block" aria-hidden="true" />
               </Link>
@@ -136,10 +135,9 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
           case "steps":
             return (
               <ol key={i} className="grid gap-4 sm:grid-cols-2">
-                {b.items.map((it, n) => (
+                {b.items.map((it) => (
                   <li key={it} className="relative rounded-lg bg-sec-soft p-6 text-sec-soft-foreground">
-                    <span className="font-display text-4xl text-sec">{n + 1}</span>
-                    <p className="mt-3 font-medium leading-relaxed">{it}</p>
+                    <p className="font-medium leading-relaxed">{it}</p>
                   </li>
                 ))}
               </ol>
