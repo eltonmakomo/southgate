@@ -6,6 +6,7 @@ const LIMITS = {
   enquiry: { max: 5, windowMinutes: 60 },
   careers: { max: 3, windowMinutes: 60 },
   newsletter: { max: 5, windowMinutes: 60 },
+  application: { max: 3, windowMinutes: 60 },
 } satisfies Record<string, { max: number; windowMinutes: number }>;
 
 type Result = { ok: true } | { ok: false; error: string };
@@ -158,6 +159,58 @@ export const submitCareers = createServerFn({ method: "POST" })
     });
     if (error) {
       console.error("careers insert failed", error.message);
+      return { ok: false, error: "We couldn't save your application. Please try again." };
+    }
+    return { ok: true };
+  });
+
+const applicationSchema = z.object({
+  parentFirstName: text(80).min(1, "Required"),
+  parentLastName: text(80).min(1, "Required"),
+  email: text(255).email("Please enter a valid email address"),
+  phone: text(40).min(5, "Please enter a phone number"),
+  relationship: z.enum(["Mother", "Father", "Guardian", "Other"]),
+  childFirstName: text(80).min(1, "Required"),
+  childLastName: text(80).min(1, "Required"),
+  dateOfBirth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Please enter a date of birth"),
+  currentSchool: text(160).optional().default(""),
+  formApplying: z.enum(["Form 1", "Form 2", "Form 3", "Form 4", "Form 5", "Form 6", "Other"]),
+  admissionYear: z.enum(["2027", "2028", "2029"]),
+  admissionTerm: z.enum(["Term 1", "Term 2", "Term 3"]),
+  boardingOption: z.enum(["", "Boarding", "Day scholar", "Not sure yet"]).default(""),
+  heardFrom: z.enum(["", "Google", "Social Media", "Friend or Family", "School Event", "Referral", "Other"]).default(""),
+  message: text(2000).optional().default(""),
+  consent: z.literal(true, { errorMap: () => ({ message: "Consent is required" }) }),
+  website: z.string().max(0).optional().default(""),
+});
+
+export const submitApplication = createServerFn({ method: "POST" })
+  .inputValidator((data: unknown) => applicationSchema.parse(data))
+  .handler(async ({ data }): Promise<Result> => {
+    if (data.website) return { ok: true };
+    const limited = await checkRateLimit("application");
+    if (limited) return { ok: false, error: limited };
+    const admin = await getAdmin();
+    const { error } = await admin.from("admission_applications").insert({
+      parent_first_name: data.parentFirstName,
+      parent_last_name: data.parentLastName,
+      email: data.email,
+      phone: data.phone,
+      relationship: data.relationship,
+      child_first_name: data.childFirstName,
+      child_last_name: data.childLastName,
+      date_of_birth: data.dateOfBirth,
+      current_school: data.currentSchool || null,
+      form_applying: data.formApplying,
+      admission_year: data.admissionYear,
+      admission_term: data.admissionTerm,
+      boarding_option: data.boardingOption || null,
+      heard_from: data.heardFrom || null,
+      message: data.message || null,
+      consent: true,
+    });
+    if (error) {
+      console.error("application insert failed", error.message);
       return { ok: false, error: "We couldn't save your application. Please try again." };
     }
     return { ok: true };
