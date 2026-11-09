@@ -52,11 +52,11 @@ export function PageBanner({
 export function MottoTiles() {
   const words = ["Grow", "Learn", "Lead"];
   return (
-    <div className="pointer-events-none relative z-10 mx-auto -mt-16 grid w-full max-w-3xl grid-cols-3 gap-3 px-5 sm:gap-5">
+    <div className="grid w-full max-w-md grid-cols-3 gap-2 sm:gap-3">
       {words.map((w) => (
         <div
           key={w}
-          className="glass pointer-events-auto flex items-center justify-center rounded-lg px-3 py-5 text-center font-display text-lg tracking-[0.25em] text-foreground sm:py-7 sm:text-2xl"
+          className="glass flex items-center justify-center rounded-lg px-2 py-2.5 text-center font-display text-xs tracking-[0.22em] text-foreground sm:py-3 sm:text-sm"
         >
           {w.toUpperCase()}
         </div>
