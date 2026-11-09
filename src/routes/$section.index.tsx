@@ -41,12 +41,12 @@ function SectionOverview() {
         crumbs={[{ label: section.title }]}
       />
       <div className="bg-sec-soft">
-        {section.slug === "about" && <MottoTiles />}
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[18rem_1fr]">
           <aside className="min-w-0 lg:-mt-32">
             <SectionNav section={section} />
           </aside>
           <div>
+            {section.slug === "about" && <div className="mb-8"><MottoTiles /></div>}
             <h2 className="text-section mb-10 max-w-2xl text-sec-soft-foreground">Explore {section.navTitle.toLowerCase()} at Southgate</h2>
             <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
               {section.pages.map((pg, i) => (
