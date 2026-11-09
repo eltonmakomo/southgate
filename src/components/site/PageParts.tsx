@@ -135,10 +135,9 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
           case "steps":
             return (
               <ol key={i} className="grid gap-4 sm:grid-cols-2">
-                {b.items.map((it, n) => (
+                {b.items.map((it) => (
                   <li key={it} className="relative rounded-lg bg-sec-soft p-6 text-sec-soft-foreground">
-                    <span className="font-display text-4xl text-sec">{n + 1}</span>
-                    <p className="mt-3 font-medium leading-relaxed">{it}</p>
+                    <p className="font-medium leading-relaxed">{it}</p>
                   </li>
                 ))}
               </ol>
