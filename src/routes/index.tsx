@@ -44,8 +44,8 @@ function Home() {
       {/* Opening */}
       <section data-banner className="relative isolate flex min-h-svh items-end overflow-hidden bg-ink text-primary-foreground">
         <HeroVideo src={heroVideo.url} poster={images.heroGates} label="Illustrative video of students walking through open school gates" />
-        <div className="scrim pointer-events-none absolute inset-0" />
-        <div className="scrim-side pointer-events-none absolute inset-0" />
+        <div className="scrim pointer-events-none absolute inset-0 opacity-70" />
+        <div className="scrim-side pointer-events-none absolute inset-0 opacity-40" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-36">
           <div className="glass-dark mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold rise">
             <Star className="h-4 w-4 text-gold" strokeWidth={1.75} />
@@ -105,8 +105,7 @@ function Home() {
                 </div>
               </div>
               <div>
-                <span className="font-display text-5xl text-gold/80">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 text-3xl sm:text-4xl">{pl.title}</h3>
+                <h3 className="text-3xl sm:text-4xl">{pl.title}</h3>
                 <p className="mt-5 text-lg leading-relaxed opacity-85">{pl.text}</p>
                 <Link to="/$section/$page" params={{ section: pl.section, page: pl.page }} className="mt-6 inline-flex items-center gap-2 font-semibold text-gold hover:underline">
                   Read more <ArrowRight className="h-4 w-4" aria-hidden="true" />

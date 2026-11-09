@@ -85,7 +85,6 @@ export function SectionNav({ section, current }: { section: Section; current?: s
                   active && "bg-sec-soft font-semibold text-sec-soft-foreground",
                 )}
               >
-                <span className="w-6 font-display text-xs text-sec">{String(i + 1).padStart(2, "0")}</span>
                 <span className="flex-1">{pg.title}</span>
                 <ArrowRight className="hidden h-3.5 w-3.5 opacity-50 transition-transform group-hover:translate-x-0.5 lg:block" aria-hidden="true" />
               </Link>

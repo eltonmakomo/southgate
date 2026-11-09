@@ -55,7 +55,6 @@ function SectionOverview() {
                   page={pg.slug}
                   image={pg.image}
                   imageAlt={pg.imageAlt}
-                  eyebrow={String(i + 1).padStart(2, "0")}
                   title={pg.title}
                   text={pg.summary}
                   tone={i % 3 === 1 ? "sec" : "paper"}

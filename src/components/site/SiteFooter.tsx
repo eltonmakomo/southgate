@@ -3,12 +3,10 @@ import emblemAsset from "@/assets/southgate-senior-emblem.png.asset.json";
 const emblem = emblemAsset.url;
 import { school, sections } from "@/content/site";
 import { NewsletterForm } from "./Forms";
-import { Star } from "./Star";
 
 export function SiteFooter() {
   return (
     <footer className="theme-about relative overflow-hidden bg-olive-deep text-primary-foreground">
-      <Star className="absolute -left-16 -top-16 h-72 w-72 text-gold opacity-15" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.1fr_2fr]">
         <div className="flex flex-col gap-6">
           <div className="w-fit rounded-lg bg-paper p-4">
