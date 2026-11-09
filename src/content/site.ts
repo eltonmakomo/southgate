@@ -29,6 +29,13 @@ export const images = {
   leadershipImg,
 };
 
+/** Events shown on the School Calendar, adopted from the Southgate Preparatory calendar. */
+export const schoolEvents: { title: string; date: string }[] = [
+  { title: "Southgate Community & Sports Day", date: "2026-09-02" },
+  { title: "Parents & Teachers Evening", date: "2026-09-03" },
+  { title: "New Academic Year Opening", date: "2026-09-05" },
+];
+
 export type FormKind = "enquiry" | "careers" | "newsletter";
 export type EnquiryCategory = "admissions" | "boarding" | "general" | "careers";
 
@@ -42,6 +49,7 @@ export type Block =
   | { type: "quote"; text: string[]; cite: string }
   | { type: "pending"; text: string }
   | { type: "news" }
+  | { type: "calendar" }
   | { type: "form"; form: FormKind; category?: EnquiryCategory };
 
 export type Page = {
@@ -709,9 +717,10 @@ export const sections: Section[] = [
         image: sportImg,
         imageAlt: "Illustrative sports fixture",
         blocks: [
-          p("Key term dates, events and holidays will be published here ahead of the academic year."),
+          p("Events, parent meetings, sports fixtures, trips, term dates and other important dates in one place. Select a highlighted date to see what is happening."),
+          { type: "calendar" },
           p("Families can expect a calendar built around key academic, sporting, cultural and agricultural milestones, including Open Days, Sports Day, Speech Day, examination periods and seasonal harvest events, giving the whole school community a shared rhythm throughout the year."),
-          { type: "pending", text: "Calendar dates have not yet been published." },
+          { type: "pending", text: "Further term dates and events will be added as they are confirmed." },
         ],
       },
       {

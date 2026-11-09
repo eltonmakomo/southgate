@@ -4,7 +4,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { schoolNews, type Block, type Section } from "@/content/site";
 import { PhotoCard } from "./PhotoCard";
 import { cn } from "@/lib/utils";
-import { CareersForm, EnquiryForm, NewsletterForm } from "./Forms";
+import { ApplicationForm, CareersForm, EnquiryForm, NewsletterForm } from "./Forms";
+import { SchoolCalendar } from "./SchoolCalendar";
 import { Star } from "./Star";
 
 export function PageBanner({
@@ -200,7 +201,18 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
                 <span><strong className="text-foreground">To be confirmed: </strong>{b.text}</span>
               </p>
             );
+          case "calendar":
+            return <SchoolCalendar key={i} />;
           case "form":
+            if (b.form === "enquiry" && b.category === "admissions")
+              return (
+                <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10">
+                  <p className="font-display text-xs uppercase text-sec">Application Form</p>
+                  <h2 className="text-section mb-2">Tell us about your child</h2>
+                  <p className="mb-8 text-muted-foreground">Complete the application form below and our admissions team will be in touch with you regarding the next steps. Fields marked * are required.</p>
+                  <ApplicationForm />
+                </div>
+              );
             return (
               <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10">
                 <h2 className="text-section mb-2">
