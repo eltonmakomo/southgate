@@ -257,10 +257,9 @@ export function CareersForm() {
     if (v("fullName").length < 2) errs.fullName = "Please enter your full name";
     if (!EMAIL_RE.test(v("email"))) errs.email = "Please enter a valid email address";
     if (v("position").length < 2) errs.position = "Please tell us the role you are interested in";
-    if (!(file instanceof File) || file.size === 0) errs.cv = "Please attach your CV as a PDF";
-    else if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) errs.cv = "Your CV must be a PDF file";
+    if (!(file instanceof File) || file.size === 0) errs.cv = "Please attach your CV";
+    else if (!/\.(pdf|docx?)$/i.test(file.name)) errs.cv = "Your CV must be a PDF or Word file";
     else if (file.size > MAX_CV) errs.cv = "Your CV must be 2MB or smaller";
-    if (!fd.get("consent")) errs.consent = "Please confirm consent";
     setErrors(errs);
     if (Object.keys(errs).length) return;
     setStatus({ state: "sending" });
@@ -291,37 +290,28 @@ export function CareersForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-5">
       <Honeypot />
-      <FormSection title="Your Details" subtitle="Your contact information">
-        <Field id="c-name" label="Your full name" required error={errors.fullName}>
+      <div className="grid gap-5">
+        <Field id="c-position" label="Position Applying For" required error={errors.position}>
+          <input id="c-position" name="position" className={fieldBase} aria-invalid={!!errors.position} />
+        </Field>
+        <Field id="c-name" label="Full Name" required error={errors.fullName}>
           <input id="c-name" name="fullName" autoComplete="name" className={fieldBase} aria-invalid={!!errors.fullName} />
         </Field>
-        <Field id="c-email" label="Email address" required error={errors.email}>
+        <Field id="c-email" label="Email Address" required error={errors.email}>
           <input id="c-email" name="email" type="email" autoComplete="email" className={fieldBase} aria-invalid={!!errors.email} />
         </Field>
-        <Field id="c-phone" label="Phone number">
+        <Field id="c-phone" label="Phone Number">
           <input id="c-phone" name="phone" type="tel" autoComplete="tel" className={fieldBase} />
         </Field>
-        <Field id="c-position" label="Role of interest" required error={errors.position}>
-          <input id="c-position" name="position" placeholder="e.g. A-Level Mathematics teacher" className={fieldBase} aria-invalid={!!errors.position} />
+        <Field id="c-message" label="Cover Letter / Statement of Interest">
+          <textarea id="c-message" name="message" rows={6} className={fieldBase} />
         </Field>
-      </FormSection>
-      <FormSection title="Additional Information" subtitle="Your cover note and CV">
-        <div className="sm:col-span-2">
-      <Field id="c-message" label="Cover note">
-        <textarea id="c-message" name="message" rows={4} className={fieldBase} />
-      </Field>
-        </div>
-        <div className="sm:col-span-2">
-      <Field id="c-cv" label="CV (PDF only, max 2MB)" required error={errors.cv}>
-        <input id="c-cv" name="cv" type="file" accept="application/pdf,.pdf" className={cn(fieldBase, "file:mr-3 file:rounded file:border-0 file:bg-sec file:px-3 file:py-1.5 file:font-semibold file:text-sec-foreground")} aria-invalid={!!errors.cv} />
-      </Field>
-        </div>
-      </FormSection>
-      <Consent id="c-consent" error={errors.consent}>
-        I agree that Southgate Senior School may store my application and CV for recruitment purposes.
-      </Consent>
+        <Field id="c-cv" label="Upload CV (PDF or Word)" required error={errors.cv}>
+          <input id="c-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" className={cn(fieldBase, "file:mr-3 file:rounded file:border-0 file:bg-sec file:px-3 file:py-1.5 file:font-semibold file:text-sec-foreground")} aria-invalid={!!errors.cv} />
+        </Field>
+      </div>
       <StatusLine status={status} success="Thank you — your application and CV have been received." />
-      <div><SubmitButton sending={status.state === "sending"}>Submit application</SubmitButton></div>
+      <div><SubmitButton sending={status.state === "sending"}>Submit Application</SubmitButton></div>
     </form>
   );
 }

@@ -124,7 +124,7 @@ const careersSchema = z.object({
   message: text(2000).optional().default(""),
   cvName: text(200),
   cvBase64: z.string().min(10).max(Math.ceil((MAX_CV_BYTES * 4) / 3) + 16),
-  consent: z.literal(true, { errorMap: () => ({ message: "Consent is required" }) }),
+  consent: z.boolean().optional().default(true),
   website: z.string().max(0).optional().default(""),
 });
 
@@ -135,13 +135,18 @@ export const submitCareers = createServerFn({ method: "POST" })
     const binary = Uint8Array.from(atob(data.cvBase64), (c) => c.charCodeAt(0));
     if (binary.byteLength > MAX_CV_BYTES) return { ok: false, error: "Your CV must be 2MB or smaller." };
     const header = String.fromCharCode(...binary.slice(0, 5));
-    if (header !== "%PDF-") return { ok: false, error: "Your CV must be a PDF file." };
+    const isPdf = header === "%PDF-";
+    const isDocx = binary[0] === 0x50 && binary[1] === 0x4b && /\.docx$/i.test(data.cvName);
+    const isDoc = binary[0] === 0xd0 && binary[1] === 0xcf && binary[2] === 0x11 && binary[3] === 0xe0 && /\.doc$/i.test(data.cvName);
+    if (!isPdf && !isDocx && !isDoc) return { ok: false, error: "Your CV must be a PDF or Word file." };
+    const ext = isPdf ? "pdf" : isDocx ? "docx" : "doc";
+    const contentType = isPdf ? "application/pdf" : isDocx ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document" : "application/msword";
     const limited = await checkRateLimit("careers");
     if (limited) return { ok: false, error: limited };
     const admin = await getAdmin();
-    const path = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.pdf`;
+    const path = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${ext}`;
     const upload = await admin.storage.from("career-cvs").upload(path, binary, {
-      contentType: "application/pdf",
+      contentType,
       upsert: false,
     });
     if (upload.error) {
