@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { findSection } from "@/content/site";
-import { AdmissionsCta, PageBanner, SectionNav } from "@/components/site/PageParts";
+import { AdmissionsCta, MottoTiles, PageBanner, SectionNav } from "@/components/site/PageParts";
 import { PhotoCard } from "@/components/site/PhotoCard";
 
 export const Route = createFileRoute("/$section/")({
@@ -41,6 +41,7 @@ function SectionOverview() {
         crumbs={[{ label: section.title }]}
       />
       <div className="bg-sec-soft">
+        {section.slug === "about" && <MottoTiles />}
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[18rem_1fr]">
           <aside className="min-w-0 lg:-mt-32">
             <SectionNav section={section} />

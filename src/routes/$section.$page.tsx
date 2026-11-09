@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { findPage } from "@/content/site";
-import { AdmissionsCta, Blocks, PageBanner, SectionNav } from "@/components/site/PageParts";
+import { AdmissionsCta, Blocks, MottoTiles, PageBanner, SectionNav } from "@/components/site/PageParts";
 import { PhotoCard } from "@/components/site/PhotoCard";
 
 export const Route = createFileRoute("/$section/$page")({
@@ -43,6 +43,7 @@ function InnerPage() {
         lead={page.summary}
         crumbs={[{ label: section.title, section: section.slug }, { label: page.title }]}
       />
+      {section.slug === "about" && <MottoTiles />}
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[18rem_1fr] lg:gap-16">
         <aside className="min-w-0 lg:-mt-32">
           <SectionNav section={section} current={page.slug} />
