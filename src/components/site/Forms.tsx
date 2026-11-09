@@ -10,7 +10,7 @@ type Status = { state: "idle" | "sending" | "done" } | { state: "error"; message
 const fieldBase =
   "w-full rounded-md border border-input bg-card px-3.5 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-sec";
 
-function Field({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string | undefined; children: ReactNode }) {
+function Field({ id, label, required, error, children }: { id: string; label: string; required?: boolean | undefined; error?: string | undefined; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-semibold">
@@ -431,7 +431,7 @@ export function ApplicationForm() {
           <textarea id="ap-message" name="message" rows={5} className={fieldBase} />
         </Field>
       </fieldset>
-      <Consent id="ap-consent" error={errors.consent}>
+      <Consent id="ap-consent" error={errors["consent"]}>
         I confirm that the information provided above is accurate and I consent to Southgate Senior School contacting me regarding this application.
       </Consent>
       <StatusLine status={status} success="Thank you — your application has been received. Our admissions team will be in touch regarding the next steps." />
