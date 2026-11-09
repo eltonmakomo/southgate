@@ -318,7 +318,7 @@ export function CareersForm() {
 
 export function FormSection({ title, subtitle, children }: { title: string; subtitle: string; children: ReactNode }) {
   return (
-    <fieldset className="rounded-lg border border-border bg-background/60 p-5 sm:p-7">
+    <fieldset className="min-w-0">
       <legend className="sr-only">{title}</legend>
       <div className="mb-5 border-b border-border pb-4">
         <h3 className="font-display text-lg text-foreground">{title}</h3>
@@ -412,7 +412,7 @@ export function ApplicationForm() {
         {select("boardingOption", "Boarding or Day", "Select an option", ["Boarding", "Day scholar", "Not sure yet"])}
         {select("heardFrom", "How did you hear about Southgate?", "Select an option", ["Google", "Social Media", "Friend or Family", "School Event", "Referral", "Other"])}
       </FormSection>
-      <fieldset className="rounded-lg border border-border bg-background/60 p-5 sm:p-7">
+      <fieldset className="min-w-0">
         <div className="mb-5 border-b border-border pb-4">
           <h3 className="font-display text-lg text-foreground">Additional Information</h3>
           <p className="text-sm text-muted-foreground">Anything else you'd like us to know?</p>
