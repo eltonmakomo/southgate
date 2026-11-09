@@ -315,6 +315,8 @@ export function CareersForm() {
       <Field id="c-cv" label="CV (PDF only, max 2MB)" required error={errors.cv}>
         <input id="c-cv" name="cv" type="file" accept="application/pdf,.pdf" className={cn(fieldBase, "file:mr-3 file:rounded file:border-0 file:bg-sec file:px-3 file:py-1.5 file:font-semibold file:text-sec-foreground")} aria-invalid={!!errors.cv} />
       </Field>
+        </div>
+      </FormSection>
       <Consent id="c-consent" error={errors.consent}>
         I agree that Southgate Senior School may store my application and CV for recruitment purposes.
       </Consent>
