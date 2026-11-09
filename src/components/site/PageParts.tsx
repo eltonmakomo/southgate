@@ -216,7 +216,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             return (
               <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10">
                 <h2 className="text-section mb-2">
-                  {b.form === "careers" ? "Apply to join our team" : b.form === "newsletter" ? "Register for our newsletter" : "Make an enquiry"}
+                  {b.form === "careers" ? "Apply for Position" : b.form === "newsletter" ? "Register for our newsletter" : "Make an enquiry"}
                 </h2>
                 <p className="mb-8 text-muted-foreground">Fields marked * are required. Your details are stored privately and only seen by school staff.</p>
                 {b.form === "careers" ? <CareersForm /> : b.form === "newsletter" ? <NewsletterForm /> : <EnquiryForm defaultCategory={b.category} />}
