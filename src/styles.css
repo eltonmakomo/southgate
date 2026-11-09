@@ -63,13 +63,13 @@
   --olive-deep: color-mix(in oklab, var(--olive) 86%, var(--ink));
   --sage: oklch(0.59595045 0.04954172 121.60101663);
   --gold: oklch(0.73192297 0.11477099 86.37226526);
-  --rose: oklch(0.63292662 0.05748416 351.38996998);
+  --rose: oklch(0.499721 0.09760223 331.743846); /* client-supplied #834D7C */
   --cream: oklch(0.95120053 0.01214199 96.42532388);
   --paper: var(--cream);
   --ink: oklch(0.2 0.02 125);
   --teal: var(--olive-deep);
   --sky: color-mix(in oklab, var(--sage) 15%, var(--cream));
-  --red: color-mix(in oklab, var(--rose) 65%, var(--ink));
+  --red: color-mix(in oklab, var(--rose) 88%, var(--ink));
   --blush: color-mix(in oklab, var(--rose) 15%, var(--cream));
   --mint: color-mix(in oklab, var(--sage) 18%, var(--cream));
   --sun: color-mix(in oklab, var(--gold) 65%, var(--cream));
