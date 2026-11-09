@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { findSection } from "@/content/site";
-import { AdmissionsCta, PageBanner, SectionNav } from "@/components/site/PageParts";
+import { AdmissionsCta, MottoTiles, PageBanner, SectionNav } from "@/components/site/PageParts";
 import { PhotoCard } from "@/components/site/PhotoCard";
 
 export const Route = createFileRoute("/$section/")({
