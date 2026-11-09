@@ -364,9 +364,9 @@ export function ApplicationForm() {
     const v = (k: string) => String(fd.get(k) ?? "").trim();
     const errs: AppErrs = {};
     for (const [k, m] of REQUIRED_APP) if (!v(k)) errs[k] = m;
-    if (!EMAIL_RE.test(v("email"))) errs.email = "Please enter a valid email address";
-    if (v("phone").length < 5) errs.phone = "Please enter a phone number";
-    if (!fd.get("consent")) errs.consent = "Please confirm the information is accurate";
+    if (!EMAIL_RE.test(v("email"))) errs["email"] = "Please enter a valid email address";
+    if (v("phone").length < 5) errs["phone"] = "Please enter a phone number";
+    if (!fd.get("consent")) errs["consent"] = "Please confirm the information is accurate";
     setErrors(errs);
     if (Object.keys(errs).length) return;
     setStatus({ state: "sending" });
