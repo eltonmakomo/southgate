@@ -1,4 +1,4 @@
-import infographic from "@/assets/together-for-a-brighter-future-transparent.png";
+import infographic from "@/assets/together-for-a-brighter-future-clean.png";
 
 export function GovernanceCircle({ description }: { description: string }) {
   return (
