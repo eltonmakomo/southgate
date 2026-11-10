@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Replace the shared sports photo with the supplied football photo, using school-green jerseys and contrasting opponents; verify on the site.
+- [x] Replace the shared sports photo with the supplied football photo, using school-green jerseys and burgundy opponents; verified on the sports page and homepage.
 
 - [x] Replace homepage video and fallback with building-free natural scenery; checked sampled frames, playback and pause/resume on desktop and mobile.
 - [x] Change the presenting student’s plain skirt to checked tartan matching the supplied reference; updated the shared photo and checked it on the site.
