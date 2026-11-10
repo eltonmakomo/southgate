@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroVideo from "@/assets/school-nature-walk.mp4.asset.json";
+import naturePoster from "@/assets/school-nature-opening.jpg";
 import emblemAsset from "@/assets/southgate-senior-emblem.png.asset.json";
 const emblem = emblemAsset.url;
 import { images, newsIntro, school, sections } from "@/content/site";
@@ -43,7 +44,7 @@ function Home() {
     <>
       {/* Opening */}
       <section data-banner className="relative isolate flex min-h-svh items-end overflow-hidden bg-ink text-primary-foreground">
-        <HeroVideo src={heroVideo.url} poster={images.heroGates} label="Illustrative video of students walking through open school gates" />
+        <HeroVideo src={heroVideo.url} poster={naturePoster} label="Students walking together along a tree-lined garden path" />
         <div className="scrim pointer-events-none absolute inset-0 opacity-70" />
         <div className="scrim-side pointer-events-none absolute inset-0 opacity-40" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-36">

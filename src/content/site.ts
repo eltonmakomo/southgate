@@ -13,8 +13,7 @@ const choirImg = choirImgAsset.url;
 import admissionsImgAsset from "@/assets/admissions-new.png.asset.json";
 const admissionsImg = admissionsImgAsset.url;
 import campusImg from "@/assets/campus.jpg";
-import leadershipImgAsset from "@/assets/leadership-hd.png.asset.json";
-const leadershipImg = leadershipImgAsset.url;
+import leadershipImg from "@/assets/leadership-checked-skirt.jpg";
 
 export const images = {
   heroGates,
