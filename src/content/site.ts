@@ -400,8 +400,8 @@ export const sections: Section[] = [
       },
       {
         slug: "careers-guidance",
-        title: "Careers Guidance & University Pathways",
-        summary: "Structured guidance on subjects, universities and careers from Form 3.",
+        title: "Career Guidance & University Pathways",
+        summary: "Structured guidance on subjects, universities and career choices from Form 3.",
         image: admissionsImg,
         imageAlt: "Illustrative family speaking with a school advisor",
         blocks: [
