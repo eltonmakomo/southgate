@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Governance & Leadership infographic replaced with the client-supplied "Together for a Brighter Future" artwork; verified it renders on the page.
+
 - [x] Replace the shared sports photo with the supplied football photo, using school-green jerseys and burgundy opponents; verified on the sports page and homepage.
 
 - [x] Replace homepage video and fallback with building-free natural scenery; checked sampled frames, playback and pause/resume on desktop and mobile.
