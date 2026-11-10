@@ -129,7 +129,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
       {blocks.map((b, i) => {
         switch (b.type) {
           case "governance":
-            return <GovernanceCircle key={i} groups={b.groups} authorityNote={b.authorityNote} description={b.description} />;
+            return <GovernanceCircle key={i} description={b.description} />;
           case "news":
             return <NewsFeed key={i} />;
           case "p":
