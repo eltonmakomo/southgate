@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Replace homepage video and fallback with building-free natural scenery and verify playback.
-- [ ] Change the presenting student’s plain skirt to checked tartan matching the supplied reference.
+- [x] Replace homepage video and fallback with building-free natural scenery; checked sampled frames, playback and pause/resume on desktop and mobile.
+- [x] Change the presenting student’s plain skirt to checked tartan matching the supplied reference; updated the shared photo and checked it on the site.
 
 - [x] Add and verify a benchmark-inspired Special Learning Needs sample page under Academics, including navigation and FAQs on desktop and mobile.
 
