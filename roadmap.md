@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Replace homepage video and fallback with building-free natural scenery and verify playback.
+- [ ] Change the presenting student’s plain skirt to checked tartan matching the supplied reference.
+
 - [x] Add and verify a benchmark-inspired Special Learning Needs sample page under Academics, including navigation and FAQs on desktop and mobile.
 
 - [x] Add and verify the equal-part circular Governance & Leadership infographic on desktop and mobile.
