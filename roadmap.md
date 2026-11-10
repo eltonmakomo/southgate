@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Add and verify the equal-part circular Governance & Leadership infographic.
+- [x] Add and verify the equal-part circular Governance & Leadership infographic on desktop and mobile.
 
 - [x] Remove large decorative stars from all page banners and verify.
 - [x] Remove statements advertising Form 1 to Form 6 throughout the site.
