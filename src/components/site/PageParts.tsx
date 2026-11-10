@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ApplicationForm, CareersForm, EnquiryForm, NewsletterForm } from "./Forms";
 import { SchoolCalendar } from "./SchoolCalendar";
 import { Star } from "./Star";
+import { GovernanceCircle } from "./GovernanceCircle";
 
 export function PageBanner({
   image,
@@ -127,6 +128,8 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
     <div className="flex flex-col gap-6">
       {blocks.map((b, i) => {
         switch (b.type) {
+          case "governance":
+            return <GovernanceCircle key={i} groups={b.groups} authorityNote={b.authorityNote} description={b.description} />;
           case "news":
             return <NewsFeed key={i} />;
           case "p":

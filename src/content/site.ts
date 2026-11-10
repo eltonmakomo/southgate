@@ -50,6 +50,7 @@ export type Block =
   | { type: "pending"; text: string }
   | { type: "news" }
   | { type: "calendar" }
+  | { type: "governance"; groups: string[]; authorityNote: string; description: string }
   | { type: "form"; form: FormKind; category?: EnquiryCategory };
 
 export type Page = {
@@ -286,6 +287,12 @@ export const sections: Section[] = [
         image: leadershipImg,
         imageAlt: "Illustrative student leader speaking to peers",
         blocks: [
+          {
+            type: "governance",
+            groups: ["Parents", "Students", "Faculty", "ZCC"],
+            authorityNote: "(Responsible Authority)",
+            description: "Parents, Students, Faculty and ZCC (Responsible Authority) shown as four equal parts of the Southgate Senior School community, with no hierarchy.",
+          },
           p("Southgate Senior School is governed by a board comprising Zion Christian Church leadership, experienced educators and community representatives, ensuring the school is guided by both spiritual conviction and sound educational practice."),
           p("This structure ensures that major decisions, from curriculum direction to campus development, are made with both spiritual integrity and educational excellence in mind. Regular board oversight, combined with a hands on senior leadership team, keeps the school accountable to its founding mission as it grows."),
         ],

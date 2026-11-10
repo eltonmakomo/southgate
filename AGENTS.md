@@ -14,5 +14,6 @@
 - Header glass sits on a separate background layer, not a dropdown ancestor, so dropdown backdrop blur can sample the page behind it; header and footer use the same complete emblem asset.
 - All school copy lives in `src/content/site.ts`; pages render it through `$section.index.tsx` / `$section.$page.tsx` templates — add content there, not in routes.
 - News articles are defined once as `schoolNews` in the content module and reused by the shared NewsFeed and section page templates so headlines, links and article content stay consistent.
+- Render the governance infographic as a scalable SVG content block with labels supplied by the content module, so it stays sharp and accessible at every screen size.
 - Section colours come from `.theme-*` classes in `src/styles.css` (`bg-sec`, `bg-sec-soft`, …) so components stay theme-agnostic.
 - Public forms go through `src/lib/forms.functions.ts` (validation, honeypot, DB-backed rate limit) and write with the admin client to RLS-locked tables; never expose submissions to the browser.
