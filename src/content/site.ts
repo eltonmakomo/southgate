@@ -274,9 +274,9 @@ export const sections: Section[] = [
               "A warm welcome to the Southgate Senior School community. As we prepare to open our doors in January 2027, we are building more than a school: we are building a home for learning, faith and character. We look forward to walking this journey with every family who joins us, from a student’s first day at Southgate to graduation, ready for what comes next.",
               "Our founding team has been carefully assembled: not only for academic expertise, but for a genuine commitment to guiding young people through the demands and opportunities of adolescence. We are excited to welcome our first families and to build, together, a school culture that will be treasured for generations.",
             ],
-            cite: "The Head of School",
+            cite: "The Headmaster",
           },
-          { type: "pending", text: "The Head of School’s biography will be added." },
+          { type: "pending", text: "The Headmaster’s biography will be added." },
         ],
       },
       {
