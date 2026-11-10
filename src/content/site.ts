@@ -538,7 +538,7 @@ export const sections: Section[] = [
       },
       {
         slug: "fees-and-payment-plans",
-        title: "Fees & Payment Plans",
+        title: "Fees & Payments",
         summary: "Separate day and boarding fees, with flexible payment plans.",
         image: campusImg,
         imageAlt: "Illustrative school campus",
