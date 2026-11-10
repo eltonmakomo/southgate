@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Add and verify a benchmark-inspired Special Learning Needs sample page under Academics, including navigation and FAQs on desktop and mobile.
+
 - [x] Add and verify the equal-part circular Governance & Leadership infographic on desktop and mobile.
 
 - [x] Remove large decorative stars from all page banners and verify.
