@@ -1,5 +1,4 @@
-import heroGatesAsset from "@/assets/gates-hd.png.asset.json";
-const heroGates = heroGatesAsset.url;
+import heroGates from "@/assets/students-paved-path.jpg";
 import academicsImgAsset from "@/assets/academics-hd.png.asset.json";
 const academicsImg = academicsImgAsset.url;
 import scienceImgAsset from "@/assets/science-new.png.asset.json";
@@ -266,7 +265,7 @@ export const sections: Section[] = [
         title: "Head’s Welcome",
         summary: "A warm welcome to the Southgate Senior School community.",
         image: heroGates,
-        imageAlt: "Illustrative students walking through open school gates",
+        imageAlt: "Students walking together along a tree-lined paved path",
         blocks: [
           {
             type: "quote",
