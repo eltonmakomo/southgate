@@ -212,7 +212,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
                 <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10 lg:p-14">
                   <div className="mb-14 border-b border-border pb-10">
                     <p className="text-base font-semibold uppercase text-foreground">Application Form</p>
-                    <h2 className="my-6 font-display text-3xl leading-tight sm:text-4xl">Tell us about your child</h2>
+                    <h2 className="my-6 font-display text-[34px] leading-[1.15] sm:text-[42px]">Tell us about your child</h2>
                     <p className="text-muted-foreground">Please provide the information below.</p>
                   </div>
                   <ApplicationForm />
