@@ -54,15 +54,18 @@ export function PageBanner({
 export function MottoTiles() {
   const words = ["Grow", "Learn", "Lead"];
   return (
-    <div className="grid w-full max-w-md grid-cols-3 gap-2 sm:gap-3">
-      {words.map((w) => (
-        <div
-          key={w}
-          className="glass flex items-center justify-center rounded-lg px-2 py-2.5 text-center font-display text-xs tracking-[0.22em] text-foreground sm:py-3 sm:text-sm"
-        >
-          {w.toUpperCase()}
-        </div>
-      ))}
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+      <p className="eyebrow shrink-0 text-sec">Our Motto</p>
+      <div className="grid min-w-0 flex-1 grid-cols-3 gap-2 sm:gap-3">
+        {words.map((w) => (
+          <div
+            key={w}
+            className="glass flex items-center justify-center rounded-lg px-2 py-2.5 text-center font-display text-xs tracking-[0.22em] text-foreground sm:py-3 sm:text-sm"
+          >
+            {w.toUpperCase()}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
