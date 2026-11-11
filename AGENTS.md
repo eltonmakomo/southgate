@@ -17,3 +17,4 @@
 - The Governance & Leadership infographic is the client-supplied "Together for a Brighter Future" artwork (`src/assets/together-for-a-brighter-future.png.asset.json`), shown exactly as supplied inside a white card; do not redraw it as SVG or alter its wording.
 - Section colours come from `.theme-*` classes in `src/styles.css` (`bg-sec`, `bg-sec-soft`, …) so components stay theme-agnostic.
 - Public forms go through `src/lib/forms.functions.ts` (validation, honeypot, DB-backed rate limit) and write with the admin client to RLS-locked tables; never expose submissions to the browser.
+- Content form blocks can select `plain-enquiry` presentation to render the development-style enquiry instead of an admissions application; enquiry category still routes the submission to the correct staff team.

@@ -84,7 +84,7 @@ type Errs = Partial<Record<"fullName" | "email" | "message" | "consent" | "posit
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const FORMS = ["Form 1", "Form 2", "Form 3", "Form 4", "Form 5", "Form 6"];
 
-export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategory?: EnquiryCategory | undefined }) {
+export function EnquiryForm({ defaultCategory = "admissions", plain = false }: { defaultCategory?: EnquiryCategory | undefined; plain?: boolean }) {
   const send = useServerFn(submitEnquiry);
   const [status, setStatus] = useState<Status>({ state: "idle" });
   const [errors, setErrors] = useState<Errs>({});
@@ -128,7 +128,7 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
   return (
     <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-5">
       <Honeypot />
-      <FormSection title="Your Enquiry" subtitle="Tell us how we can help">
+      <EnquirySection plain={plain} title="Your Enquiry" subtitle="Tell us how we can help">
         <Field id="category" label="Enquiry type" required>
           <select id="category" name="category" defaultValue={defaultCategory} className={fieldBase}>
             <option value="admissions">Admissions enquiry</option>
@@ -145,8 +145,8 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
             ))}
           </select>
         </Field>
-      </FormSection>
-      <FormSection title="Your Details" subtitle="Your contact information">
+      </EnquirySection>
+      <EnquirySection plain={plain} title="Your Details" subtitle="Your contact information">
         <Field id="fullName" label="Your full name" required error={errors.fullName}>
           <input id="fullName" name="fullName" autoComplete="name" className={fieldBase} aria-invalid={!!errors.fullName} aria-describedby={errors.fullName ? "fullName-error" : undefined} />
         </Field>
@@ -159,14 +159,14 @@ export function EnquiryForm({ defaultCategory = "admissions" }: { defaultCategor
         <Field id="studentName" label="Student’s name">
           <input id="studentName" name="studentName" className={fieldBase} />
         </Field>
-      </FormSection>
-      <FormSection title="Additional Information" subtitle="Anything else you'd like us to know?">
+      </EnquirySection>
+      <EnquirySection plain={plain} title="Additional Information" subtitle="Anything else you'd like us to know?">
         <div className="sm:col-span-2">
           <Field id="message" label="Your message" required error={errors.message}>
             <textarea id="message" name="message" rows={5} className={fieldBase} aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined} />
           </Field>
         </div>
-      </FormSection>
+      </EnquirySection>
       <Consent id="enquiry-consent" error={errors.consent}>
         I agree that Southgate Senior School may store these details and contact me about this enquiry.
       </Consent>
@@ -327,6 +327,11 @@ export function FormSection({ title, subtitle, children }: { title: string; subt
       <div className="grid gap-5 sm:grid-cols-2">{children}</div>
     </fieldset>
   );
+}
+
+function EnquirySection({ plain, title, subtitle, children }: { plain: boolean; title: string; subtitle: string; children: ReactNode }) {
+  if (plain) return <div className="grid gap-5 sm:grid-cols-2">{children}</div>;
+  return <FormSection title={title} subtitle={subtitle}>{children}</FormSection>;
 }
 
 type AppErrs = Record<string, string>;
