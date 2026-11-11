@@ -128,7 +128,7 @@ export function EnquiryForm({ defaultCategory = "admissions", plain = false }: {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-5">
+    <form onSubmit={onSubmit} noValidate className="application-form relative flex flex-col gap-10">
       <Honeypot />
       <EnquirySection plain={plain} title="Your Enquiry" subtitle="Tell us how we can help">
         <Field id="category" label="Enquiry type" required>
@@ -173,7 +173,7 @@ export function EnquiryForm({ defaultCategory = "admissions", plain = false }: {
         I agree that Southgate Senior School may store these details and contact me about this enquiry.
       </Consent>
       <StatusLine status={status} success="Thank you — your enquiry has been received. Our team will be in touch." />
-      <div><SubmitButton sending={status.state === "sending"}>Send enquiry</SubmitButton></div>
+      <div><SubmitButton application sending={status.state === "sending"}>Send enquiry</SubmitButton></div>
     </form>
   );
 }
@@ -209,7 +209,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-4">
+    <form onSubmit={onSubmit} noValidate className={cn("application-form relative flex flex-col", compact ? "gap-4" : "gap-10")}>
       <Honeypot />
       <div className={cn("grid gap-4", !compact && "sm:grid-cols-2")}>
         {!compact && (
@@ -228,7 +228,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
         status={status}
         success="Thank you — your interest has been recorded. Newsletters will be sent once our mailing service is launched."
       />
-      <div><SubmitButton sending={status.state === "sending"}>Register interest</SubmitButton></div>
+      <div><SubmitButton application sending={status.state === "sending"}>Register interest</SubmitButton></div>
     </form>
   );
 }
@@ -290,9 +290,9 @@ export function CareersForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-5">
+    <form onSubmit={onSubmit} noValidate className="application-form relative flex flex-col gap-10">
       <Honeypot />
-      <div className="grid gap-5">
+      <div className="grid gap-6 sm:gap-8">
         <Field id="c-position" label="Position Applying For" required error={errors.position}>
           <input id="c-position" name="position" className={fieldBase} aria-invalid={!!errors.position} />
         </Field>
@@ -313,7 +313,7 @@ export function CareersForm() {
         </Field>
       </div>
       <StatusLine status={status} success="Thank you — your application and CV have been received." />
-      <div><SubmitButton sending={status.state === "sending"}>Submit Application</SubmitButton></div>
+      <div><SubmitButton application sending={status.state === "sending"}>Submit Application</SubmitButton></div>
     </form>
   );
 }
@@ -322,17 +322,17 @@ export function FormSection({ title, subtitle, children }: { title: string; subt
   return (
     <fieldset className="min-w-0">
       <legend className="sr-only">{title}</legend>
-      <div className="mb-5 border-b border-border pb-4">
-        <h3 className="font-display text-lg text-foreground">{title}</h3>
-        <p className="text-sm text-muted-foreground">{subtitle}</p>
+      <div className="mb-8">
+        <h3 className="font-display text-2xl leading-tight text-foreground sm:text-[28px]">{title}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">{children}</div>
+      <div className="grid gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-12">{children}</div>
     </fieldset>
   );
 }
 
 function EnquirySection({ plain, title, subtitle, children }: { plain: boolean; title: string; subtitle: string; children: ReactNode }) {
-  if (plain) return <div className="grid gap-5 sm:grid-cols-2">{children}</div>;
+  if (plain) return <div className="grid gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-12">{children}</div>;
   return <FormSection title={title} subtitle={subtitle}>{children}</FormSection>;
 }
 
