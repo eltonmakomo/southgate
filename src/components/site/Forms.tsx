@@ -1,6 +1,7 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { useServerFn } from "@tanstack/react-start";
-import { CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { CheckCircle2, Loader2, AlertCircle, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { submitApplication, submitCareers, submitEnquiry, submitNewsletter } from "@/lib/forms.functions";
 import type { EnquiryCategory } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -66,16 +67,17 @@ function StatusLine({ status, success }: { status: Status; success: string }) {
   return null;
 }
 
-function SubmitButton({ sending, children }: { sending: boolean; children: ReactNode }) {
+function SubmitButton({ sending, children, application = false }: { sending: boolean; children: ReactNode; application?: boolean }) {
   return (
-    <button
+    <Button
       type="submit"
       disabled={sending}
-      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-sec px-6 py-3 font-semibold text-sec-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+      className={cn("inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-sec px-6 py-3 text-base font-semibold text-sec-foreground transition-opacity hover:bg-sec hover:opacity-90 disabled:opacity-60", application && "mt-3 min-h-14 min-w-52 justify-between gap-4")}
     >
       {sending && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
       {sending ? "Sending…" : children}
-    </button>
+      {application && !sending && <ArrowRight className="text-sec-accent" aria-hidden="true" />}
+    </Button>
   );
 }
 
@@ -395,42 +397,50 @@ export function ApplicationForm() {
   );
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-6">
+    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-12">
       <Honeypot />
-      <FormSection title="Parent / Guardian Details" subtitle="Your contact information">
+      <ApplicationSection title="Parent / Guardian Details" subtitle="Your contact information" paired>
         {input("parentFirstName", "First Name", { required: true, auto: "given-name" })}
         {input("parentLastName", "Last Name", { required: true, auto: "family-name" })}
         {input("email", "Email Address", { required: true, type: "email", auto: "email" })}
         {input("phone", "Phone Number", { required: true, type: "tel", auto: "tel" })}
-        {select("relationship", "Relationship to Child", "Select relationship", ["Mother", "Father", "Guardian", "Other"], true)}
-      </FormSection>
-      <FormSection title="Child's Details" subtitle="Tell us about the child applying">
+        <div className="sm:col-span-2">{select("relationship", "Relationship to Child", "Select relationship", ["Mother", "Father", "Guardian", "Other"], true)}</div>
+      </ApplicationSection>
+      <ApplicationSection title="Child's Details" subtitle="Tell us about the child applying" paired>
         {input("childFirstName", "Child's First Name", { required: true })}
         {input("childLastName", "Child's Last Name", { required: true })}
         {input("dateOfBirth", "Date of Birth", { required: true, type: "date" })}
         {input("currentSchool", "Current School")}
-      </FormSection>
-      <FormSection title="Admission Details" subtitle="Tell us what you're looking for">
+      </ApplicationSection>
+      <ApplicationSection title="Admission Details" subtitle="Tell us what you're looking for">
         {select("formApplying", "Form Applying For", "Select form", [...FORMS, "Other"], true)}
         {select("admissionYear", "Preferred Admission Year", "Select admission year", ["2027", "2028", "2029"], true)}
         {select("admissionTerm", "Preferred Admission Term", "Select admission term", ["Term 1", "Term 2", "Term 3"], true)}
-        {select("boardingOption", "Boarding or Day", "Select an option", ["Boarding", "Day scholar", "Not sure yet"])}
         {select("heardFrom", "How did you hear about Southgate?", "Select an option", ["Google", "Social Media", "Friend or Family", "School Event", "Referral", "Other"])}
-      </FormSection>
-      <fieldset className="min-w-0">
-        <div className="mb-5 border-b border-border pb-4">
-          <h3 className="font-display text-lg text-foreground">Additional Information</h3>
-          <p className="text-sm text-muted-foreground">Anything else you'd like us to know?</p>
-        </div>
+      </ApplicationSection>
+      <ApplicationSection title="Additional Information" subtitle="Anything else you'd like us to know?">
         <Field id="ap-message" label="Message">
-          <textarea id="ap-message" name="message" rows={5} className={fieldBase} />
+          <textarea id="ap-message" name="message" rows={6} maxLength={2000} placeholder="Tell us anything you feel would be helpful for our admissions team to know..." className={fieldBase} />
         </Field>
-      </fieldset>
+      </ApplicationSection>
       <Consent id="ap-consent" error={errors["consent"]}>
         I confirm that the information provided above is accurate and I consent to Southgate Senior School contacting me regarding this application.
       </Consent>
       <StatusLine status={status} success="Thank you — your application has been received. Our admissions team will be in touch regarding the next steps." />
-      <div><SubmitButton sending={status.state === "sending"}>Submit Application</SubmitButton></div>
+      <div><SubmitButton sending={status.state === "sending"} application>Submit Application</SubmitButton></div>
     </form>
+  );
+}
+
+function ApplicationSection({ title, subtitle, paired = false, children }: { title: string; subtitle: string; paired?: boolean; children: ReactNode }) {
+  return (
+    <fieldset className="min-w-0">
+      <legend className="sr-only">{title}</legend>
+      <div className="mb-7">
+        <h3 className="font-display text-2xl text-foreground">{title}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
+      </div>
+      <div className={cn("grid gap-6 [&_input]:min-h-13 [&_select]:min-h-13 [&_input]:bg-background/40 [&_select]:bg-background/40 [&_textarea]:bg-background/40", paired && "sm:grid-cols-2")}>{children}</div>
+    </fieldset>
   );
 }

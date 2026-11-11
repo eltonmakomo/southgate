@@ -48,7 +48,7 @@ function InnerPage() {
           <SectionNav section={section} current={page.slug} />
         </aside>
         <article className="min-w-0 max-w-3xl">
-          {section.slug === "about" && <div className="mb-8"><MottoTiles /></div>}
+          {section.slug === "about" && page.slug === "mission-and-values" && <div className="mb-8"><MottoTiles /></div>}
           <Blocks blocks={page.blocks} />
         </article>
       </div>

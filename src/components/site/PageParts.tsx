@@ -210,9 +210,11 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             if (b.form === "enquiry" && b.category === "admissions" && b.presentation !== "plain-enquiry")
               return (
                 <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10">
-                  <p className="font-display text-xs uppercase text-sec">Application Form</p>
-                  <h2 className="text-section mb-2">Tell us about your child</h2>
-                  <p className="mb-8 text-muted-foreground">Complete the application form below and our admissions team will be in touch with you regarding the next steps. Fields marked * are required.</p>
+                  <div className="mb-12 border-b border-border pb-8">
+                    <p className="font-display text-xs uppercase text-sec">Application Form</p>
+                    <h2 className="text-section my-3">Tell us about your child</h2>
+                    <p className="text-muted-foreground">Please provide the information below.</p>
+                  </div>
                   <ApplicationForm />
                 </div>
               );
