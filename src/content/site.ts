@@ -421,7 +421,7 @@ export const sections: Section[] = [
         image: sportImg,
         imageAlt: "Illustrative students playing football and netball",
         blocks: [
-          p("Beyond the classroom, students engage in a structured programme of clubs, sport, the arts and agricultural learning, designed to build well rounded, capable young people ready to lead."),
+          p("Beyond the classroom, students engage in a structured programme of clubs, sport, the arts, agricultural learning and health designed to build well rounded, capable young people ready to lead."),
           p("Every student participates in at least one club, one sporting code and one aspect of our agricultural programme each term, ensuring a genuinely well rounded experience rather than a narrow academic focus."),
         ],
       },
