@@ -72,7 +72,7 @@ function SubmitButton({ sending, children, application = false }: { sending: boo
     <Button
       type="submit"
       disabled={sending}
-      className={cn("inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-sec px-6 py-3 text-base font-semibold text-sec-foreground transition-opacity hover:bg-sec hover:opacity-90 disabled:opacity-60", application && "mt-3 min-h-14 min-w-52 justify-between gap-4")}
+      className={cn("inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-sec px-6 py-3 text-base font-semibold text-sec-foreground transition-opacity hover:bg-sec hover:opacity-90 disabled:opacity-60", application && "mt-3 min-h-15 min-w-52 justify-between gap-4 rounded px-6 py-4 text-sm")}
     >
       {sending && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
       {sending ? "Sending…" : children}
@@ -384,12 +384,12 @@ export function ApplicationForm() {
 
   const input = (id: string, label: string, opts: { required?: boolean; type?: string; auto?: string } = {}) => (
     <Field id={`ap-${id}`} label={label} required={opts.required} error={errors[id]}>
-      <input id={`ap-${id}`} name={id} type={opts.type ?? "text"} autoComplete={opts.auto} className={fieldBase} aria-invalid={!!errors[id]} />
+      <input id={`ap-${id}`} name={id} type={opts.type ?? "text"} autoComplete={opts.auto} required={opts.required} maxLength={id === "email" ? 255 : id === "phone" ? 40 : id === "currentSchool" ? 160 : 80} className={fieldBase} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? `ap-${id}-error` : undefined} />
     </Field>
   );
   const select = (id: string, label: string, placeholder: string, options: string[], required = false) => (
     <Field id={`ap-${id}`} label={label} required={required} error={errors[id]}>
-      <select id={`ap-${id}`} name={id} defaultValue="" className={fieldBase} aria-invalid={!!errors[id]}>
+      <select id={`ap-${id}`} name={id} defaultValue="" required={required} className={fieldBase} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? `ap-${id}-error` : undefined}>
         <option value="">{placeholder}</option>
         {options.map((o) => <option key={o} value={o}>{o}</option>)}
       </select>
@@ -397,7 +397,7 @@ export function ApplicationForm() {
   );
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative flex flex-col gap-12">
+    <form onSubmit={onSubmit} noValidate className="application-form relative flex flex-col gap-14">
       <Honeypot />
       <ApplicationSection title="Parent / Guardian Details" subtitle="Your contact information" paired>
         {input("parentFirstName", "First Name", { required: true, auto: "given-name" })}
@@ -420,7 +420,7 @@ export function ApplicationForm() {
       </ApplicationSection>
       <ApplicationSection title="Additional Information" subtitle="Anything else you'd like us to know?">
         <Field id="ap-message" label="Message">
-          <textarea id="ap-message" name="message" rows={6} maxLength={2000} placeholder="Tell us anything you feel would be helpful for our admissions team to know..." className={fieldBase} />
+          <textarea id="ap-message" name="message" rows={10} maxLength={2000} placeholder="Tell us anything you feel would be helpful for our admissions team to know..." className={fieldBase} />
         </Field>
       </ApplicationSection>
       <Consent id="ap-consent" error={errors["consent"]}>
@@ -436,11 +436,11 @@ function ApplicationSection({ title, subtitle, paired = false, children }: { tit
   return (
     <fieldset className="min-w-0">
       <legend className="sr-only">{title}</legend>
-      <div className="mb-7">
-        <h3 className="font-display text-2xl text-foreground">{title}</h3>
+      <div className="mb-8">
+        <h3 className="font-display text-2xl leading-tight text-foreground sm:text-[28px]">{title}</h3>
         <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
       </div>
-      <div className={cn("grid gap-6 [&_input]:min-h-13 [&_select]:min-h-13 [&_input]:bg-background/40 [&_select]:bg-background/40 [&_textarea]:bg-background/40", paired && "sm:grid-cols-2")}>{children}</div>
+      <div className={cn("grid gap-x-6 gap-y-6", paired && "sm:grid-cols-2 sm:gap-y-12")}>{children}</div>
     </fieldset>
   );
 }

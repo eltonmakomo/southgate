@@ -161,6 +161,26 @@
 @utility school-calendar-empty { background: var(--calendar-empty-pattern); }
 @utility shadow-glass { box-shadow: var(--glass-shadow); }
 
+/* Reference application layout, scoped so enquiry and careers forms stay unchanged. */
+.application-form label { font-size: 14px; }
+.application-form input:not([type="checkbox"]),
+.application-form select,
+.application-form textarea {
+  min-width: 0;
+  border-color: var(--border);
+  border-radius: 4px;
+  background-color: color-mix(in oklab, var(--background) 40%, var(--card));
+  padding: 15px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.application-form input:not([type="checkbox"]),
+.application-form select { height: 56px; }
+.application-form textarea { min-height: 270px; resize: vertical; }
+.application-form input:focus-visible,
+.application-form select:focus-visible,
+.application-form textarea:focus-visible { border-color: var(--sec); }
+
 @utility text-hero {
   font-size: 2.6rem;
   line-height: 0.95;
