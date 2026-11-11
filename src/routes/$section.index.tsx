@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { findSection } from "@/content/site";
-import { AdmissionsCta, MottoTiles, PageBanner, SectionNav } from "@/components/site/PageParts";
+import { AdmissionsCta, PageBanner, SectionNav } from "@/components/site/PageParts";
 import { PhotoCard } from "@/components/site/PhotoCard";
 
 export const Route = createFileRoute("/$section/")({
@@ -46,7 +46,6 @@ function SectionOverview() {
             <SectionNav section={section} />
           </aside>
           <div>
-            {section.slug === "about" && <div className="mb-8"><MottoTiles /></div>}
             <h2 className="text-section mb-10 max-w-2xl text-sec-soft-foreground">Explore {section.navTitle.toLowerCase()} at Southgate</h2>
             <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
               {section.pages.map((pg, i) => (

@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Restore and verify the development-style enquiry form on Fees & Payments.
+- [x] Match application form fields and appearance to the Preparatory apply-now page, retaining senior-school choices and no numbering; verified submission.
+- [x] Show the pictured GROW / LEARN / LEAD tiles only on Mission and Values.
+
 - [x] Governance & Leadership infographic replaced with the client-supplied "Together for a Brighter Future" artwork; verified it renders on the page.
 
 - [x] Replace the shared sports photo with the supplied football photo, using school-green jerseys and burgundy opponents; verified on the sports page and homepage.

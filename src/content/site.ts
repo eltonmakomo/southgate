@@ -50,7 +50,7 @@ export type Block =
   | { type: "news" }
   | { type: "calendar" }
   | { type: "governance"; groups: string[]; authorityNote: string; description: string }
-  | { type: "form"; form: FormKind; category?: EnquiryCategory };
+  | { type: "form"; form: FormKind; category?: EnquiryCategory; presentation?: "plain-enquiry" };
 
 export type Page = {
   slug: string;
@@ -545,7 +545,7 @@ export const sections: Section[] = [
         blocks: [
           p("Southgate Senior School offers separate fee structures for day and boarding students, with flexible payment plan options available. A detailed fee schedule is provided directly to families upon enquiry."),
           p("Fees are structured to reflect the premium nature of our facilities, teaching and boarding provision, while flexible termly and annual payment options help families plan with confidence. A comprehensive breakdown, covering tuition, boarding, meals, examination entry and cocurricular activities, is shared directly with every applying family."),
-          { type: "form", form: "enquiry", category: "admissions" },
+          { type: "form", form: "enquiry", category: "admissions", presentation: "plain-enquiry" },
         ],
       },
       {
