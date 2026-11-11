@@ -209,10 +209,10 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
           case "form":
             if (b.form === "enquiry" && b.category === "admissions" && b.presentation !== "plain-enquiry")
               return (
-                <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10">
-                  <div className="mb-12 border-b border-border pb-8">
-                    <p className="font-display text-xs uppercase text-sec">Application Form</p>
-                    <h2 className="text-section my-3">Tell us about your child</h2>
+                <div key={i} className="mt-4 rounded-lg border border-border bg-card p-6 shadow-card sm:p-10 lg:p-14">
+                  <div className="mb-14 border-b border-border pb-10">
+                    <p className="text-base font-semibold uppercase text-foreground">Application Form</p>
+                    <h2 className="my-6 font-display text-3xl leading-tight sm:text-4xl">Tell us about your child</h2>
                     <p className="text-muted-foreground">Please provide the information below.</p>
                   </div>
                   <ApplicationForm />
