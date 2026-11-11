@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Restore and verify the development-style enquiry form on Fees & Payments.
+- [ ] Match application form fields and appearance to the Preparatory apply-now page and verify submission.
+
 - [x] Governance & Leadership infographic replaced with the client-supplied "Together for a Brighter Future" artwork; verified it renders on the page.
 
 - [x] Replace the shared sports photo with the supplied football photo, using school-green jerseys and burgundy opponents; verified on the sports page and homepage.
