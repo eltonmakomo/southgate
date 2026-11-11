@@ -162,7 +162,8 @@
 @utility shadow-glass { box-shadow: var(--glass-shadow); }
 
 /* Reference application layout, scoped so enquiry and careers forms stay unchanged. */
-.application-form label { font-size: 14px; }
+.application-form label { font-size: 13px; line-height: 1.7; }
+.application-form label[for="ap-consent"] { font-size: 12px; }
 .application-form input:not([type="checkbox"]),
 .application-form select,
 .application-form textarea {

@@ -437,8 +437,8 @@ function ApplicationSection({ title, subtitle, paired = false, children }: { tit
     <fieldset className="min-w-0">
       <legend className="sr-only">{title}</legend>
       <div className="mb-8">
-        <h3 className="font-display text-2xl leading-tight text-foreground sm:text-[28px]">{title}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
+        <h3 className="font-display text-[25px] leading-[1.15] text-foreground">{title}</h3>
+        <p className="mt-1 text-[13px] leading-[1.7] text-muted-foreground">{subtitle}</p>
       </div>
       <div className={cn("grid gap-x-6 gap-y-6", paired && "sm:grid-cols-2 sm:gap-y-12")}>{children}</div>
     </fieldset>
