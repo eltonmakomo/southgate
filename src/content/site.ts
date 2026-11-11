@@ -7,7 +7,7 @@ const scienceImg = scienceImgAsset.url;
 import agricultureImg from "@/assets/agriculture.jpg";
 import boardingImgAsset from "@/assets/boarding-hd.png.asset.json";
 const boardingImg = boardingImgAsset.url;
-import sportImg from "@/assets/southgate-football.jpg";
+import sportImg from "@/assets/southgate-football-wide.jpg";
 import choirImgAsset from "@/assets/music-new.png.asset.json";
 const choirImg = choirImgAsset.url;
 import admissionsImgAsset from "@/assets/admissions-new.png.asset.json";
