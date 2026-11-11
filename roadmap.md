@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Restore and verify the development-style enquiry form on Fees & Payments.
-- [ ] Match application form fields and appearance to the Preparatory apply-now page and verify submission.
-- [ ] Show the pictured About-page section only on Mission and Values.
+- [x] Restore and verify the development-style enquiry form on Fees & Payments.
+- [x] Match application form fields and appearance to the Preparatory apply-now page, retaining senior-school choices and no numbering; verified submission.
+- [x] Show the pictured GROW / LEARN / LEAD tiles only on Mission and Values.
 
 - [x] Governance & Leadership infographic replaced with the client-supplied "Together for a Brighter Future" artwork; verified it renders on the page.
 
