@@ -11,11 +11,14 @@ import choirImgAsset from "@/assets/music-new.png.asset.json";
 const choirImg = choirImgAsset.url;
 import admissionsImgAsset from "@/assets/admissions-new.png.asset.json";
 const admissionsImg = admissionsImgAsset.url;
-import campusImg from "@/assets/campus.jpg";
 import historyImg from "@/assets/history-grounds.jpg";
 import historyJourneyImg from "@/assets/our-history-journey.jpg";
 import newsBulletinImg from "@/assets/news-bulletin.jpg";
 import feesFamilyImg from "@/assets/fees-family-planning.jpg";
+import campusStudyImg from "@/assets/campus-study-outdoors.jpg";
+import facilitiesLibraryImg from "@/assets/facilities-library.jpg";
+import contactWelcomeImg from "@/assets/contact-welcome-path.jpg";
+import campusMapPathImg from "@/assets/campus-map-path.jpg";
 import leadershipImg from "@/assets/leadership-checked-skirt.jpg";
 
 export const images = {
@@ -27,7 +30,6 @@ export const images = {
   sportImg,
   choirImg,
   admissionsImg,
-  campusImg,
   leadershipImg,
 };
 
@@ -200,8 +202,8 @@ export const schoolNews: Page[] = [
     slug: "campus-designed-for-secondary-learning",
     title: "A Campus Designed for Secondary Learning",
     summary: "Classrooms, practical learning and spaces for study, faith and a full school life.",
-    image: campusImg,
-    imageAlt: "Illustrative school campus with classrooms and landscaped grounds",
+    image: campusStudyImg,
+    imageAlt: "Students in uniform studying together at a table outdoors under trees at golden hour",
     blocks: [
       p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our senior-school students, that means spaces suited to the changing needs of young people throughout their senior school education."),
       list(["Well-resourced classrooms, science laboratories and ICT facilities", "Library and supervised study spaces for independent learning", "Boarding houses, dining facilities and spaces to relax", "Sports fields and courts, alongside arts and music spaces", "Working agricultural land for hands-on learning and stewardship"]),
@@ -314,8 +316,8 @@ export const sections: Section[] = [
         slug: "campus-and-facilities",
         title: "Campus & Facilities",
         summary: "Every space designed to be safe, stimulating and suited to young people.",
-        image: campusImg,
-        imageAlt: "Illustrative school campus with lawns and modern buildings",
+        image: facilitiesLibraryImg,
+        imageAlt: "Students in uniform studying in a bright school library",
         blocks: [
           p("Our campus has been designed to support learning both inside and outside the classroom, with every space built to be safe, stimulating and suited to the needs of young people:"),
           list([
@@ -817,8 +819,8 @@ export const sections: Section[] = [
     navTitle: "Contact",
     theme: "contact",
     intro: "We’d love to hear from you. Reach our admissions and school office team, or submit an enquiry.",
-    image: campusImg,
-    imageAlt: "Illustrative school campus at sunset",
+    image: contactWelcomeImg,
+    imageAlt: "A staff member welcoming a parent and student in uniform on a garden path",
     pages: [
       {
         slug: "contact-us",
@@ -838,8 +840,8 @@ export const sections: Section[] = [
         slug: "campus-map-and-directions",
         title: "Campus Map & Directions",
         summary: "Location details and directions to campus.",
-        image: campusImg,
-        imageAlt: "Illustrative campus grounds",
+        image: campusMapPathImg,
+        imageAlt: "Students in uniform walking along a paved path beside a blank wooden signpost",
         blocks: [
           p("Find directions and location details for the Southgate Senior School campus here."),
           p("Full address details, a campus map and directions by road will be provided here, along with guidance for families travelling from further afield."),

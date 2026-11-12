@@ -45,3 +45,4 @@
 - [x] Use the client's second batch of 4 photos on the site
 - [x] Our History + Latest News images replaced: new building-free photos (sunrise walk on the path; students reading a school newsletter), About overview banner moved off the old campus shot; verified live on both pages
 - [x] Fees & Payments image replaced: parent and student in uniform going through fee paperwork at a table (no buildings, no readable text); verified on the page banner and the Admissions overview card
+- [x] Old campus photo retired site-wide: "A Campus Designed for Secondary Learning" article now shows students studying outdoors under trees; Campus & Facilities shows a library study scene; Contact banner shows a staff member welcoming a parent and student on a garden path; Campus Map & Directions shows students on a paved path beside a blank signpost. Unused import removed so the old photo is no longer shipped; verified on all five pages with no page errors.
