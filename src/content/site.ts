@@ -753,8 +753,8 @@ export const sections: Section[] = [
         slug: "latest-news",
         title: "Latest News",
         summary: newsIntro.summary,
-        image: campusImg,
-        imageAlt: "Illustrative school campus",
+        image: newsBulletinImg,
+        imageAlt: "Students in uniform reading a school newsletter together outdoors",
         blocks: [
           p("Follow the founding story of Southgate Senior School as we prepare to welcome students in January 2027. Explore our admissions announcement, meet the vision behind the school and discover how our founding community will take shape."),
           { type: "news" },
