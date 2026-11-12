@@ -11,7 +11,6 @@ import choirImgAsset from "@/assets/music-new.png.asset.json";
 const choirImg = choirImgAsset.url;
 import admissionsImgAsset from "@/assets/admissions-new.png.asset.json";
 const admissionsImg = admissionsImgAsset.url;
-import campusImg from "@/assets/campus.jpg";
 import historyImg from "@/assets/history-grounds.jpg";
 import historyJourneyImg from "@/assets/our-history-journey.jpg";
 import newsBulletinImg from "@/assets/news-bulletin.jpg";
@@ -31,7 +30,6 @@ export const images = {
   sportImg,
   choirImg,
   admissionsImg,
-  campusImg,
   leadershipImg,
 };
 
