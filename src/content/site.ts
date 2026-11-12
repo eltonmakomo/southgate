@@ -13,6 +13,8 @@ import admissionsImgAsset from "@/assets/admissions-new.png.asset.json";
 const admissionsImg = admissionsImgAsset.url;
 import campusImg from "@/assets/campus.jpg";
 import historyImg from "@/assets/history-grounds.jpg";
+import historyJourneyImg from "@/assets/our-history-journey.jpg";
+import newsBulletinImg from "@/assets/news-bulletin.jpg";
 import leadershipImg from "@/assets/leadership-checked-skirt.jpg";
 
 export const images = {
@@ -216,15 +218,15 @@ export const sections: Section[] = [
     theme: "about",
     intro:
       "A new private institution established under the guidance of the Zion Christian Church, combining academic excellence with strong moral and spiritual foundations.",
-    image: campusImg,
-    imageAlt: "Illustrative modern school campus at sunset with lawns and trees",
+    image: historyImg,
+    imageAlt: "Students in uniform walking along a paved path through open school grounds at golden hour",
     pages: [
       {
         slug: "our-history",
         title: "Our History",
         summary: "A new school, carefully planned from curriculum to campus, opening in January 2027.",
-        image: historyImg,
-        imageAlt: "Students in uniform walking along a paved path through open school grounds at golden hour",
+        image: historyJourneyImg,
+        imageAlt: "Students in uniform walking along a paved path through open school grounds at sunrise",
         blocks: [
           p("Southgate Senior School is a new private institution established under the guidance of the Zion Christian Church, created to meet a growing need for a secondary school that combines academic excellence with strong moral and spiritual foundations. We open our doors to our first students in January 2027, with a campus and programme designed from the ground up to support students through every stage of senior school."),
           p("The idea for Southgate was born from a simple observation: that families in Zimbabwe and across the region deserve a school offering the very best of both worlds, an education recognised internationally, and a character formed by deep rooted faith and community values. Backed by the resources and vision of the Zion Christian Church, Southgate has been carefully planned from its curriculum to its campus, ensuring that when our doors open in January 2027, every element is ready to support our founding students."),
