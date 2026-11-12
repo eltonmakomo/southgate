@@ -17,6 +17,9 @@ import historyJourneyImg from "@/assets/our-history-journey.jpg";
 import newsBulletinImg from "@/assets/news-bulletin.jpg";
 import feesFamilyImg from "@/assets/fees-family-planning.jpg";
 import campusStudyImg from "@/assets/campus-study-outdoors.jpg";
+import facilitiesLibraryImg from "@/assets/facilities-library.jpg";
+import contactWelcomeImg from "@/assets/contact-welcome-path.jpg";
+import campusMapPathImg from "@/assets/campus-map-path.jpg";
 import leadershipImg from "@/assets/leadership-checked-skirt.jpg";
 
 export const images = {
@@ -315,8 +318,8 @@ export const sections: Section[] = [
         slug: "campus-and-facilities",
         title: "Campus & Facilities",
         summary: "Every space designed to be safe, stimulating and suited to young people.",
-        image: campusImg,
-        imageAlt: "Illustrative school campus with lawns and modern buildings",
+        image: facilitiesLibraryImg,
+        imageAlt: "Students in uniform studying in a bright school library",
         blocks: [
           p("Our campus has been designed to support learning both inside and outside the classroom, with every space built to be safe, stimulating and suited to the needs of young people:"),
           list([
@@ -818,8 +821,8 @@ export const sections: Section[] = [
     navTitle: "Contact",
     theme: "contact",
     intro: "We’d love to hear from you. Reach our admissions and school office team, or submit an enquiry.",
-    image: campusImg,
-    imageAlt: "Illustrative school campus at sunset",
+    image: contactWelcomeImg,
+    imageAlt: "A staff member welcoming a parent and student in uniform on a garden path",
     pages: [
       {
         slug: "contact-us",
@@ -839,8 +842,8 @@ export const sections: Section[] = [
         slug: "campus-map-and-directions",
         title: "Campus Map & Directions",
         summary: "Location details and directions to campus.",
-        image: campusImg,
-        imageAlt: "Illustrative campus grounds",
+        image: campusMapPathImg,
+        imageAlt: "Students in uniform walking along a paved path beside a blank wooden signpost",
         blocks: [
           p("Find directions and location details for the Southgate Senior School campus here."),
           p("Full address details, a campus map and directions by road will be provided here, along with guidance for families travelling from further afield."),
