@@ -16,6 +16,7 @@ import historyImg from "@/assets/history-grounds.jpg";
 import historyJourneyImg from "@/assets/our-history-journey.jpg";
 import newsBulletinImg from "@/assets/news-bulletin.jpg";
 import feesFamilyImg from "@/assets/fees-family-planning.jpg";
+import campusStudyImg from "@/assets/campus-study-outdoors.jpg";
 import leadershipImg from "@/assets/leadership-checked-skirt.jpg";
 
 export const images = {
@@ -200,8 +201,8 @@ export const schoolNews: Page[] = [
     slug: "campus-designed-for-secondary-learning",
     title: "A Campus Designed for Secondary Learning",
     summary: "Classrooms, practical learning and spaces for study, faith and a full school life.",
-    image: campusImg,
-    imageAlt: "Illustrative school campus with classrooms and landscaped grounds",
+    image: campusStudyImg,
+    imageAlt: "Students in uniform studying together at a table outdoors under trees at golden hour",
     blocks: [
       p("Southgate’s campus vision brings learning, faith and community onto the same ground. For our senior-school students, that means spaces suited to the changing needs of young people throughout their senior school education."),
       list(["Well-resourced classrooms, science laboratories and ICT facilities", "Library and supervised study spaces for independent learning", "Boarding houses, dining facilities and spaces to relax", "Sports fields and courts, alongside arts and music spaces", "Working agricultural land for hands-on learning and stewardship"]),
