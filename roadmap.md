@@ -44,3 +44,4 @@
 - [ ] Uniform crests updated to the client-uploaded gate-star-book emblem: done in science, choir, boarding, admissions and agriculture; still pending in hero-gates, leadership, academics and sport (crest masks missed the real crest position — redraw masks and re-run)
 - [x] Use the client's second batch of 4 photos on the site
 - [x] Our History + Latest News images replaced: new building-free photos (sunrise walk on the path; students reading a school newsletter), About overview banner moved off the old campus shot; verified live on both pages
+- [x] Fees & Payments image replaced: parent and student in uniform going through fee paperwork at a table (no buildings, no readable text); verified on the page banner and the Admissions overview card

@@ -15,6 +15,7 @@ import campusImg from "@/assets/campus.jpg";
 import historyImg from "@/assets/history-grounds.jpg";
 import historyJourneyImg from "@/assets/our-history-journey.jpg";
 import newsBulletinImg from "@/assets/news-bulletin.jpg";
+import feesFamilyImg from "@/assets/fees-family-planning.jpg";
 import leadershipImg from "@/assets/leadership-checked-skirt.jpg";
 
 export const images = {
@@ -542,8 +543,8 @@ export const sections: Section[] = [
         slug: "fees-and-payment-plans",
         title: "Fees & Payments",
         summary: "Separate day and boarding fees, with flexible payment plans.",
-        image: campusImg,
-        imageAlt: "Illustrative school campus",
+        image: feesFamilyImg,
+        imageAlt: "Parent and student in uniform reviewing school fee paperwork together at a table",
         blocks: [
           p("Southgate Senior School offers separate fee structures for day and boarding students, with flexible payment plan options available. A detailed fee schedule is provided directly to families upon enquiry."),
           p("Fees are structured to reflect the premium nature of our facilities, teaching and boarding provision, while flexible termly and annual payment options help families plan with confidence. A comprehensive breakdown, covering tuition, boarding, meals, examination entry and cocurricular activities, is shared directly with every applying family."),
